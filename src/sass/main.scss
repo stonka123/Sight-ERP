@@ -1,5 +1,7 @@
 @import '../modules/colors';
 @import '../layout/login-page';
+@import '../layout/home/home.scss';
+
 *,
 *::before,
 *::after {
@@ -11,7 +13,6 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
-
 	width: 100%;
 	height: 100%;
 }

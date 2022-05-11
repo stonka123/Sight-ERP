@@ -120,6 +120,12 @@
   outline: none;
 }
 
+.login-container__bottom-input--error, .login-container__bottom-btn--error {
+  color: #fa4747;
+  margin: 0.5em 0;
+  visibility: hidden;
+}
+
 .login-container__bottom-btn {
   background-color: #3f3ff1;
   cursor: pointer;
@@ -150,6 +156,10 @@
 .login-container__bottom-forgot:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
+}
+
+.show-error {
+  visibility: visible;
 }
 
 @media (min-width: 900px) {

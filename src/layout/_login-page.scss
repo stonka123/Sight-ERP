@@ -71,6 +71,11 @@
 				&:focus {
 					outline: none;
 				}
+				&--error {
+					color: $attention;
+					margin: 0.5em 0;
+					visibility: hidden;
+				}
 			}
 			&-btn {
 				background-color: $blue;
@@ -97,6 +102,12 @@
 			}
 		}
 	}
+}
+
+// OTHER
+
+.show-error {
+	visibility: visible;
 }
 @media (min-width: 900px) {
 	.login {
