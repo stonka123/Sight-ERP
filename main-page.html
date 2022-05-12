@@ -1,12 +1,34 @@
-<div id="root">
-    <nav id="main-nav" class="sidebar">
-        <a href="/start" onclick="route()">Start</a>
-        <a href="/task" onclick="route()">Task</a>
-        <a href="/about" onclick="route()">About</a>
-        <a href="/lorem" onclick="route()">Lorem</a>
-        <a href="/">Logaut</a>
-    </nav>
-    <div id="main-page"></div>
-</div>
+<!DOCTYPE html>
+<html lang="pl">
 
-<script type="module" src="./src/js/router.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sight ERP </title>
+    <script src="https://kit.fontawesome.com/2c8b96ae6c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/main.css">
+
+
+
+</head>
+
+<body>
+    <div id="root">
+        <nav id="main-nav" class="nav">
+            <a href="/start" class="nav-link" onclick="route()">Start</a>
+            <a href="/task" class="nav-link" onclick="route()">Task</a>
+
+            <a href="/">Logaut</a>
+        </nav>
+        <div id="main-page"></div>
+    </div>
+    <script type="module" src="./src/js/router.js"></script>
+
+</body>
+
+</html>

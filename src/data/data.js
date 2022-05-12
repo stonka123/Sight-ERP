@@ -1,5 +1,5 @@
 export const data = {
 	id: 0,
-	login: 'admin',
-	password: '123',
+	login: '1',
+	password: '1',
 }

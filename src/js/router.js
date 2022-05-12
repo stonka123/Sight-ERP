@@ -10,8 +10,7 @@ export const routes = {
 	'/main-page.html': '/pages/start.html',
 	'/task': '/pages/task.html',
 	'/start': '/pages/start.html',
-	'/about': '/pages/about.html',
-	'/lorem': '/pages/lorem.html',
+	
 }
  
 export const handleLocation = async () => {

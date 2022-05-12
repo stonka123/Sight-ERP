@@ -169,6 +169,11 @@
   }
 }
 
+#main-nav {
+  color: red;
+  background-color: red;
+}
+
 *,
 *::before,
 *::after {
