@@ -1,7 +1,16 @@
-const startWork = document.querySelector('.home-btn')
+const startBtn = document.querySelector('.container-start__text-button')
 
-const test = () => {
-	console.log('dziala')
+export const startWork = () => {
+	const day = document.querySelector('.work-date')
+	const hour = document.getElementsByClassName('work-hour')
+
+	const today = new Date()
+	const startDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
+	const startHour = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
+	day.innerHTML = startDate
+	hour.innerHTML = startHour
+
+	console.log(day)
 }
 
-startWork.addEventListener('click', start)
+startBtn.addEventListener('click', startWork)

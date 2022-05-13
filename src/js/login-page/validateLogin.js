@@ -9,7 +9,7 @@ export const veryficationLogaut = () => {
 	if (login.value === data.login && password.value === data.password) {
 		errorParagraph.classList.remove('show-error')
 		document.getElementsByClassName('login')[0].style.display = 'none'
-		document.getElementsByClassName('dashboard')[0].style.display = 'block'
+		document.getElementsByClassName('dashboard')[0].style.display = 'flex'
 	} else if (login.value != data.login || password.value != data.password) {
 		errorParagraph.classList.add('show-error')
 	}

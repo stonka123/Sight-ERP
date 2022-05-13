@@ -10,7 +10,7 @@
 	&-container {
 		display: flex;
 		align-items: center;
-		justify-content: space-evenly;
+		justify-content: center;
 		flex-direction: column;
 		height: 100%;
 		width: 100%;
@@ -18,9 +18,9 @@
 		&__top {
 			display: flex;
 			align-items: center;
-			justify-content: space-around;
+			justify-content: center;
 			flex-direction: column;
-			height: 35%;
+
 			&-logo {
 				display: flex;
 				align-items: center;
@@ -28,41 +28,40 @@
 				padding: 1em;
 
 				svg {
-					width: 80px;
+					width: 30px;
 					fill: $logo-color;
 					margin: 1em;
 				}
 				&--text {
 					text-transform: uppercase;
 					font-family: 'Noto Sans', sans-serif;
-					font-size: 4rem;
+					font-size: 2rem;
 					font-weight: bold;
 					&--add {
-						font-size: 1rem;
+						font-size: 0.7rem;
 					}
 				}
 			}
 			&-sign {
-				font-size: 2.5rem;
+				font-size: 1.7rem;
 				padding: 1em;
 			}
 		}
 		&__bottom {
 			display: flex;
 			align-items: center;
-			justify-content: space-evenly;
+			justify-content: center;
 			flex-direction: column;
-			width: 100%;
 			overflow: hidden;
 
 			&-input,
 			&-btn {
-				font-size: 2rem;
+				font-size: 1.7rem;
 				color: $dark-gray;
-				padding: 0.6em;
-				width: 80%;
+				padding: 0.3em;
+				// width: 80%;
 				max-width: 500px;
-				margin: 1em;
+				margin: 0.9em;
 				border: 2px solid $light-gray;
 				background: $dark-white;
 				border-radius: 4px;

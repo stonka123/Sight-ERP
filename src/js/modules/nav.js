@@ -1,16 +1,23 @@
 const navStart = document.querySelector('.nav-start')
 const navTasks = document.querySelector('.nav-tasks')
-const contentStart = document.querySelector('.content-start')
-const contentTasks = document.querySelector('.content-tasks')
+const contentStart = document.querySelector('.start')
+const contentTasks = document.querySelector('.tasks')
 const mainContent = document.querySelector('.main-content')
-const testowo = document.querySelector('.testowo')
+const contentArea = document.querySelector('.content')
 
 export const showStart = () => {
-	if (testowo.classList.contains('content-start') === false) {
-		contentStart.style.display = 'none'
-		contentTasks.style.display = 'block'
-		console.log(contentStart)
+	if (contentArea.classList.contains('start') === false) {
+		contentStart.style.display = 'block'
+		contentTasks.style.display = 'none'
 	}
 }
 
-navTasks.addEventListener('click', showStart)
+export const showTasks = () => {
+	if (contentArea.classList.contains('tasks') === false) {
+		contentTasks.style.display = 'block'
+		contentStart.style.display = 'none'
+	}
+}
+
+navStart.addEventListener('click', showStart)
+navTasks.addEventListener('click', showTasks)
