@@ -1,7 +1,8 @@
 @import '../modules/colors';
 @import '../layout/login-page';
 @import '../layout/nav';
-
+@import '../layout/panel-top';
+@import '../layout/main-content';
 *,
 *::before,
 *::after {
@@ -17,9 +18,11 @@ html {
 	height: 100%;
 }
 body {
+	position: relative;
 	display: flex;
-	align-items: center;
+
 	justify-content: center;
+
 	background-color: $white;
 	font-family: 'Roboto', sans-serif;
 	// font-family: 'Noto Sans', sans-serif;
@@ -27,12 +30,25 @@ body {
 	width: 100vw;
 	height: 100vh;
 }
-
-#main-page {
-	position: absolute;
-	top: 0;
-	left: 30%;
+.dashboard {
+	display: flex;
+	align-items: start;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	// display: none;
 }
+.login {
+	display: none;
+	// display: block;
+}
+.testowy {
+	display: none;
+}
+.test {
+	width: 100%;
+}
+
 .wrapper {
 	margin: 0 auto;
 	width: 100%;

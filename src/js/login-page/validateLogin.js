@@ -8,7 +8,8 @@ const errorParagraph = document.querySelector('.login-container__bottom-input--e
 export const veryficationLogaut = () => {
 	if (login.value === data.login && password.value === data.password) {
 		errorParagraph.classList.remove('show-error')
-		window.location.href = 'main-page.html'
+		document.getElementsByClassName('login')[0].style.display = 'none'
+		document.getElementsByClassName('dashboard')[0].style.display = 'block'
 	} else if (login.value != data.login || password.value != data.password) {
 		errorParagraph.classList.add('show-error')
 	}
