@@ -3,6 +3,7 @@
 @import '../layout/nav';
 @import '../layout/panel-top';
 @import '../layout/main-content';
+@import '../layout/start';
 *,
 *::before,
 *::after {
@@ -20,8 +21,8 @@ html {
 body {
 	position: relative;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	// align-items: center;
+	// justify-content: center;
 	background-color: $white;
 	font-family: 'Roboto', sans-serif;
 	// font-family: 'Noto Sans', sans-serif;
@@ -36,12 +37,12 @@ body {
 	height: 100vh;
 	overflow: hidden;
 
-	display: none;
+	// display: none;
 }
 .login {
 	display: none;
 
-	display: flex;
+	// display: flex;
 }
 
 .wrapper {

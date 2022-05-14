@@ -58,10 +58,16 @@
             </div>
 
             <nav id="main-nav" class="nav-items">
-                <a href="#" class="nav-items__item nav-start"><i class="fa-solid fa-user-tag
-                    nav-items__item--icon"></i>Start</a>
+                <a href="#" class="nav-items__item nav-start">
+                    <i class="fa-solid fa-user-tag
+                    nav-items__item--icon">
+                    </i>
+                    <span class="nav-items__item--icon--href">Start</span> </a>
+
                 <a href="#" class="nav-items__item nav-tasks"><i
-                        class="fa-solid fa-list-check nav-items__item--icon "></i>Tasks</a>
+                        class="fa-solid fa-list-check nav-items__item--icon "></i>
+                    <span class="nav-items__item--icon--href">Tasks</span></a>
+
             </nav>
             <a href="/" class="nav--logout"><i class="fa-solid fa-power-off nav-items__item--icon--logout"></i></a>
         </div>
@@ -105,8 +111,8 @@
                     </select>
 
                     <div class="work">
-                        <div class="work-date"></div>
-                        <div class="work-hour"></div>
+                        <div id="work-date"></div>
+                        <div id="work-hour"></div>
                         <div class="work-zlecenie"></div>
                     </div>
 

@@ -3,9 +3,10 @@
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
-	width: 100%;
+	width: 80vw;
 	height: 10vh;
-	background-color: $dark-white;
+	background-color: $light-gray;
+	border-bottom: 1px solid $logo-color;
 	overflow: hidden;
 	&-burger {
 		display: inline-block;
@@ -53,8 +54,8 @@
 }
 
 .change .bar1 {
-	-webkit-transform: rotate(-45deg) translate(-6px, 6px);
-	transform: rotate(-45deg) translate(-6px, 3px);
+	-webkit-transform: rotate(-45deg) translate(-6px, 4px);
+	transform: rotate(-45deg) translate(-6px, 4px);
 }
 
 .change .bar2 {
@@ -62,11 +63,20 @@
 }
 
 .change .bar3 {
-	-webkit-transform: rotate(45deg) translate(-8px, -8px);
-	transform: rotate(45deg) translate(-8px, -8px);
+	-webkit-transform: rotate(45deg) translate(-8px, -7px);
+	transform: rotate(45deg) translate(-8px, -7px);
 }
 // OTHER
 
 .panel-mobile-show {
 	transform: translateX(0);
+}
+
+@media (min-width: 900px) {
+	.panel-burger {
+		display: none;
+	}
+	.panel-box {
+		transform: translateX(0);
+	}
 }
