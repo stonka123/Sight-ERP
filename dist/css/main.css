@@ -253,6 +253,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 60%;
   padding: 0.3em 1em;
   -webkit-transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -340,8 +341,8 @@
 }
 
 .panel-box__item {
-  padding: 0.3em;
-  margin-right: 0.3em;
+  padding: 0.5em;
+  margin-right: 0.7em;
 }
 
 .panel-box__item-notifications {
@@ -443,6 +444,12 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #f3f3f3;
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
@@ -460,10 +467,14 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  display: none;
 }
 
 .login {
   display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .wrapper {
