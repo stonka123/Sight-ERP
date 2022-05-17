@@ -1,3 +1,66 @@
+@import '../modules/colors';
+
 .start {
 	padding: 1em;
+	width: 100%;
+	&-presence {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column-reverse;
+	}
+}
+.container-start {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	&__text {
+		font-size: 2rem;
+		text-align: center;
+		&-button--start,
+		&-button--end {
+			padding: 1em;
+			padding: 0.5em 1em;
+			margin-top: 1em;
+			cursor: pointer;
+			border: none;
+			border-radius: 9px;
+			background-color: rgb(54, 141, 54);
+			color: $white;
+		}
+		&-button--end {
+			background-color: rgb(161, 161, 161);
+			color: $dark-text;
+			display: none;
+		}
+	}
+}
+.presence {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	padding: 0.5em;
+	font-size: 1.2rem;
+	margin-top: 0.5em;
+	border-bottom: 2px solid black;
+
+	&-day {
+		width: 20%;
+	}
+	&-hour-start {
+		width: 40%;
+		span {
+			color: rgb(54, 141, 54);
+		}
+	}
+	&-hour-end {
+		width: 40%;
+		span {
+			color: rgb(216, 58, 58);
+		}
+	}
 }

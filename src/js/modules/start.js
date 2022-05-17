@@ -1,24 +1,102 @@
-const startBtn = document.querySelector('.container-start__text-button')
-const workPanel = document.querySelector('.work')
+const startBtn = document.querySelector('.container-start__text-button--start')
+const workPanel = document.querySelector('.container-start')
+const startContainer = document.querySelector('.start')
+const startPresence = document.querySelector('.start-presence')
+const endButton = document.querySelector('.container-start__text-button--end')
+const titleWorkInfo = document.querySelector('.container-start__text')
 
+let $startBox
+let $dzien
+let $endBtn
+let $startInput
+let $godzina
+let $startHourInput
+let endWork
+let endHourInput
+let $now
+let $today
+let $startDate
+let $startHour
+let endHourWork
 export const startWork = () => {
-	const day = document.getElementById('work-date')
-	const hour = document.getElementById('work-hour')
-	const today = new Date()
+	const day = document.getElementById('presence-day-input')
+	const hourStart = document.getElementById('presence-hour-start-input')
+	const hourEnd = document.getElementById('presence-hour-end-input')
 
-	const startDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
-	const startHour = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds()
-	day.innerHTML = startDate
-	hour.innerHTML = startHour
-	console.log(startHour)
 	createDayWork()
 }
 
 const createDayWork = () => {
-	const endBtn = document.createElement('button')
-	endBtn.classList.add('testowa')
-	endBtn.innerHTML = 'Zakończ pracę'
-	workPanel.appendChild(endBtn)
+	let $now = new Date()
+	let $today = new Date()
+	let $startDate = $now.getFullYear() + '-' + ($now.getMonth() + 1) + '-' + $now.getDate()
+	let $startHour = $now.getHours() + ':' + $now.getMinutes() + ':' + $now.getSeconds()
+
+	// change title info
+	titleWorkInfo.textContent = 'Zakończ pracę'
+
+	// create end btn
+	endButton.style.display = 'block'
+	// hidden start btn
+	startBtn.style.display = 'none'
+	// creat box start work
+	$startBox = document.createElement('div')
+	$startBox.classList.add('presence')
+	// create date start
+	$dzien = document.createElement('p')
+	$dzien.classList.add('presence-day')
+	$dzien.innerText = 'Dzień: '
+
+	$startInput = document.createElement('span')
+	$startInput.setAttribute('id', 'presence-day-input')
+	$startInput.innerText = $startDate
+
+	// create start hour
+	$godzina = document.createElement('p')
+	$godzina.classList.add('presence-hour-start')
+	$godzina.innerText = 'Godzina rozp.:'
+
+	$startHourInput = document.createElement('span')
+	$startHourInput.setAttribute('id', 'presence-hour-start-input')
+	$startHourInput.innerText = $startHour
+
+	// create end hour
+	endWork = document.createElement('p')
+	endWork.classList.add('presence-hour-end')
+	endWork.innerText = 'Godzina zakoń.:'
+
+	endHourInput = document.createElement('span')
+	endHourInput.setAttribute('id', 'presence-hour-end-input')
+	endHourInput.innerText = endHourWork
+
+	// append
+	startPresence.appendChild($startBox)
+	$startBox.appendChild($dzien)
+	$dzien.appendChild($startInput)
+	$startBox.appendChild($godzina)
+	$godzina.appendChild($startHourInput)
+
+	// endBtn.addEventListener('click', finishDayWork)
+}
+const finishDayWork = () => {
+	// title change
+	titleWorkInfo.textContent = 'Zacznij pracę'
+
+	let $today = new Date()
+	let endHourWork = $today.getHours() + ':' + $today.getMinutes() + ':' + $today.getSeconds()
+	// create end hour
+	endWork = document.createElement('p')
+	endWork.classList.add('presence-hour-end')
+	endWork.innerText = 'Godzina zakoń.:'
+
+	endHourInput = document.createElement('span')
+	endHourInput.setAttribute('id', 'presence-hour-end-input')
+	endHourInput.innerText = endHourWork
+	$startBox.appendChild(endWork)
+	endWork.appendChild(endHourInput)
+	endButton.style.display = 'none'
+	startBtn.style.display = 'block'
 }
 
 startBtn.addEventListener('click', startWork)
+endButton.addEventListener('click', finishDayWork)
