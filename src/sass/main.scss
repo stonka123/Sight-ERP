@@ -4,6 +4,7 @@
 @import '../layout/panel-top';
 @import '../layout/main-content';
 @import '../layout/start';
+@import '../layout/tasks';
 *,
 *::before,
 *::after {
@@ -37,12 +38,12 @@ body {
 	height: 100vh;
 	overflow: hidden;
 
-	display: none;
+	// display: none;
 }
 .login {
 	display: none;
 
-	display: flex;
+	// display: flex;
 }
 
 .wrapper {

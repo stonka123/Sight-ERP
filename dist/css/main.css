@@ -285,6 +285,10 @@
   color: #fa4747;
 }
 
+.icon-spy {
+  color: red;
+}
+
 @media (min-width: 900px) {
   .nav-items__item--icon--href {
     display: block;
@@ -308,7 +312,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: relative;
-  width: 80vw;
+  width: 100%;
   height: 10vh;
   background-color: #cfcfcf;
   border-bottom: 1px solid #7e49f8;
@@ -318,6 +322,7 @@
 .panel-burger {
   display: inline-block;
   cursor: pointer;
+  width: 50%;
 }
 
 .panel-box {
@@ -330,10 +335,12 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
   color: #414141;
   width: 100%;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: -webkit-transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -408,7 +415,7 @@
 }
 
 .main-content {
-  width: 80vw;
+  width: 100vw;
 }
 
 .start {
@@ -417,6 +424,10 @@
 
 .tasks {
   display: none;
+}
+
+.active {
+  color: red;
 }
 
 .start {
@@ -498,10 +509,20 @@
 }
 
 .presence-day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 20%;
 }
 
 .presence-hour-start {
+  text-align: center;
   width: 40%;
 }
 
@@ -561,14 +582,10 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  display: none;
 }
 
 .login {
   display: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .wrapper {

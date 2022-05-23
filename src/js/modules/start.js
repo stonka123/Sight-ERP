@@ -30,7 +30,7 @@ const createDayWork = () => {
 	let $now = new Date()
 	let $today = new Date()
 	let $startDate = $now.getFullYear() + '-' + ($now.getMonth() + 1) + '-' + $now.getDate()
-	let $startHour = $now.getHours() + ':' + $now.getMinutes() + ':' + $now.getSeconds()
+	let $startHour = $now.getHours() + ':' + $now.getMinutes()
 
 	// change title info
 	titleWorkInfo.textContent = 'Zakończ pracę'
@@ -45,7 +45,7 @@ const createDayWork = () => {
 	// create date start
 	$dzien = document.createElement('p')
 	$dzien.classList.add('presence-day')
-	$dzien.innerText = 'Dzień: '
+	$dzien.innerText = ''
 
 	$startInput = document.createElement('span')
 	$startInput.setAttribute('id', 'presence-day-input')
@@ -54,7 +54,7 @@ const createDayWork = () => {
 	// create start hour
 	$godzina = document.createElement('p')
 	$godzina.classList.add('presence-hour-start')
-	$godzina.innerText = 'Godzina rozp.:'
+	$godzina.innerText = 'Start:'
 
 	$startHourInput = document.createElement('span')
 	$startHourInput.setAttribute('id', 'presence-hour-start-input')
@@ -83,11 +83,11 @@ const finishDayWork = () => {
 	titleWorkInfo.textContent = 'Zacznij pracę'
 
 	let $today = new Date()
-	let endHourWork = $today.getHours() + ':' + $today.getMinutes() + ':' + $today.getSeconds()
+	let endHourWork = $today.getHours() + ':' + $today.getMinutes()
 	// create end hour
 	endWork = document.createElement('p')
 	endWork.classList.add('presence-hour-end')
-	endWork.innerText = 'Godzina zakoń.:'
+	endWork.innerText = 'Koniec:'
 
 	endHourInput = document.createElement('span')
 	endHourInput.setAttribute('id', 'presence-hour-end-input')
@@ -97,6 +97,9 @@ const finishDayWork = () => {
 	endButton.style.display = 'none'
 	startBtn.style.display = 'block'
 }
+
+// scrollSpy Nav
+const observe = params => {}
 
 startBtn.addEventListener('click', startWork)
 endButton.addEventListener('click', finishDayWork)

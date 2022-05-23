@@ -49,9 +49,13 @@
 	border-bottom: 2px solid black;
 
 	&-day {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 20%;
 	}
 	&-hour-start {
+		text-align: center;
 		width: 40%;
 		span {
 			color: rgb(54, 141, 54);
@@ -64,3 +68,4 @@
 		}
 	}
 }
+// OTHER
