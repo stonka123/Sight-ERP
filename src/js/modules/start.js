@@ -98,13 +98,15 @@ const finishDayWork = () => {
 	startBtn.style.display = 'block'
 }
 
-export const enterCheck = () => {
-	if (event.keyCode === 13 && startContainer.style.display === 'block') {
+const enterCheck = event => {
+	if (event.keyCode === 13 && endButton.style.display !== 'block' && startContainer.style.display === 'block') {
 		createDayWork()
+	} else if (event.keyCode === 13 && endButton.style.display === 'block' && startContainer.style.display === 'block') {
+		finishDayWork()
 	}
 }
 
 startBtn.addEventListener('click', startWork)
-window.addEventListener('keyup', enterCheck)
+document.addEventListener('keyup', enterCheck)
 
 endButton.addEventListener('click', finishDayWork)
