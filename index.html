@@ -60,7 +60,7 @@
             <nav id="main-nav" class="nav-items">
                 <a href="#home" class="nav-items__item nav-start nav-icons">
                     <i class="fa-solid fa-user-tag
-                    nav-items__item--icon start-icon">
+                    nav-items__item--icon start-icon icon-spy">
                     </i>
                     <span class="nav-items__item--icon--href">Start</span> </a>
 
@@ -122,7 +122,61 @@
 
 
                 </div>
-                <div class="tasks section">tasks</div>
+                <div class="tasks section wrapper">
+
+                    <div class="tasks-container">
+                        <div class="tasks-container__top">
+                            <div class="tasks-container__top-title">Lista zadań do wykonania</div>
+                            <input type="text" class="tasks-container__top-input" placeholder="Wpisz treść zadania...">
+                            <button class="tasks-container__top-btn">Dodaj</button>
+                        </div>
+                        <div class="tasks-container__bottom">
+                            <div class="tasks-container__bottom-title">Lista zadań</div>
+                            <p class="tasks-container__bottom-info">Brak zadań na liście.</p>
+                            <ul>
+                                <li id="test1">Wypić kawę
+                                    <div class="tasks-container__bottom-tools">
+                                        <button class="complete"><i class="fas fa-check"></i></button>
+                                        <button class="edit">EDIT</button>
+                                        <button class="delete"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </li>
+                                <li id="test2">Zjeść śniadanie
+                                    <div class="tasks-container__bottom-tools">
+                                        <button class="complete"><i class="fas fa-check"></i></button>
+                                        <button class="edit">EDIT</button>
+                                        <button class="delete"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </li>
+                                <li id="test3">Umyć okna
+                                    <div class="tasks-container__bottom-tools">
+                                        <button class="complete"><i class="fas fa-check"></i></button>
+                                        <button class="edit">EDIT</button>
+                                        <button class="delete"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </li>
+                            </ul>
+
+
+                            <div class="popup">
+                                <h3>Edytuj zadanie:</h3>
+                                <div class="popup-body">
+                                    <p class="popup-info"></p>
+                                    <input type="text" class="popup-input" placeholder="Wprowadź nową treść zadania...">
+                                    <button class="popup-btn accept">Zatwierdź</button>
+                                    <button class="popup-btn cancel">Anuluj</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
             </div>
         </main>
 

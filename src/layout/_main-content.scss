@@ -4,10 +4,15 @@
 
 .start {
 	display: block;
+
+	// display: none;
 }
 .tasks {
 	display: none;
+
+	// display: block;
 }
-.active {
-	color: red;
+// OTHER
+.icon-spy {
+	color: $logo-color;
 }

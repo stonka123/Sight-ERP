@@ -18,11 +18,11 @@ let $today
 let $startDate
 let $startHour
 let endHourWork
+
 export const startWork = () => {
 	const day = document.getElementById('presence-day-input')
 	const hourStart = document.getElementById('presence-hour-start-input')
 	const hourEnd = document.getElementById('presence-hour-end-input')
-
 	createDayWork()
 }
 
@@ -98,8 +98,13 @@ const finishDayWork = () => {
 	startBtn.style.display = 'block'
 }
 
-// scrollSpy Nav
-const observe = params => {}
+export const enterCheck = () => {
+	if (event.keyCode === 13 && startContainer.style.display === 'block') {
+		createDayWork()
+	}
+}
 
 startBtn.addEventListener('click', startWork)
+window.addEventListener('keyup', enterCheck)
+
 endButton.addEventListener('click', finishDayWork)

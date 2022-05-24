@@ -17,7 +17,7 @@ export const showStart = () => {
 
 export const showTasks = () => {
 	if (contentArea.classList.contains('tasks') === false) {
-		contentTasks.style.display = 'block'
+		contentTasks.style.display = 'flex'
 		contentStart.style.display = 'none'
 		observeSection(navTasks)
 	}
@@ -25,11 +25,11 @@ export const showTasks = () => {
 
 export const observeSection = e => {
 	if (e.hash === '#home') {
-		homeIcon.classList.add('active')
-		tasksIcon.classList.remove('active')
+		homeIcon.classList.add('icon-spy')
+		tasksIcon.classList.remove('icon-spy')
 	} else if (e.hash === '#tasks') {
-		tasksIcon.classList.add('active')
-		homeIcon.classList.remove('active')
+		tasksIcon.classList.add('icon-spy')
+		homeIcon.classList.remove('icon-spy')
 	}
 }
 navStart.addEventListener('click', showStart)

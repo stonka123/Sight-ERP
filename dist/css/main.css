@@ -285,10 +285,6 @@
   color: #fa4747;
 }
 
-.icon-spy {
-  color: red;
-}
-
 @media (min-width: 900px) {
   .nav-items__item--icon--href {
     display: block;
@@ -426,8 +422,8 @@
   display: none;
 }
 
-.active {
-  color: red;
+.icon-spy {
+  color: #7e49f8;
 }
 
 .start {
@@ -538,6 +534,193 @@
   color: #d83a3a;
 }
 
+.tasks {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tasks-container {
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  -webkit-box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
+          box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
+  border-radius: 5px;
+}
+
+.tasks-container__top {
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  background-image: linear-gradient(340deg, #045de9 0%, #09c6f9 100%);
+}
+
+.tasks-container__top-title {
+  margin-bottom: 20px;
+  color: #cfcfcf;
+  text-transform: uppercase;
+}
+
+.tasks-container__top-input {
+  width: 60%;
+  padding: 5px 10px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  color: #414141;
+  background-color: whitesmoke;
+}
+
+.tasks-container__top-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: #222222;
+  background-color: whitesmoke;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tasks-container__bottom {
+  padding: 20px 0;
+}
+
+.tasks-container__bottom-title {
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.tasks-container__bottom li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px;
+  padding-left: 20px;
+  list-style: none;
+  background-color: whitesmoke;
+  font-size: 1rem;
+}
+
+.tasks-container__bottom-tools {
+  display: inline-block;
+}
+
+.tasks-container__bottom-tools button {
+  padding: 15px 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.complete {
+  color: var(--light-blue);
+}
+
+.edit {
+  font-weight: bold;
+  color: #0fb345;
+}
+
+.delete {
+  color: tomato;
+}
+
+.completed {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--light-dark);
+  text-decoration: line-through;
+}
+
+.popup {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 800px;
+  color: whitesmoke;
+  background-color: #414141;
+  border-radius: 5px;
+}
+
+.popup h3 {
+  padding: 20px;
+}
+
+.popup-info {
+  margin-bottom: 20px;
+  color: whitesmoke;
+}
+
+.popup-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 90%;
+  padding: 10px;
+}
+
+.popup-input {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #414141;
+  background-color: whitesmoke;
+}
+
+.popup-btn {
+  display: inline-block;
+  width: 30%;
+  padding: 10px 22px;
+  margin: 20px;
+  border: none;
+  border-radius: 5px;
+  color: #414141;
+  background-color: whitesmoke;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.popup-btn:hover {
+  color: #fff;
+  background-color: #7e49f8;
+}
+
 *,
 *::before,
 *::after {
@@ -582,10 +765,14 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  display: none;
 }
 
 .login {
   display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .wrapper {
