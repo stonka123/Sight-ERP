@@ -4,6 +4,7 @@ const startContainer = document.querySelector('.start')
 const startPresence = document.querySelector('.start-presence')
 const endButton = document.querySelector('.container-start__text-button--end')
 const titleWorkInfo = document.querySelector('.container-start__text')
+const sectionLogin = document.querySelector('.login')
 
 let $startBox
 let $dzien
@@ -97,11 +98,20 @@ const finishDayWork = () => {
 	endButton.style.display = 'none'
 	startBtn.style.display = 'block'
 }
-
-const enterCheck = event => {
-	if (event.keyCode === 13 && endButton.style.display !== 'block' && startContainer.style.display === 'block') {
+export const enterCheck = () => {
+	if (
+		event.keyCode === 13 &&
+		endButton.style.display !== 'block' &&
+		sectionLogin.style.display === 'none' &&
+		window.getComputedStyle(startContainer).display === 'block'
+	) {
 		createDayWork()
-	} else if (event.keyCode === 13 && endButton.style.display === 'block' && startContainer.style.display === 'block') {
+	} else if (
+		event.keyCode === 13 &&
+		endButton.style.display === 'block' &&
+		sectionLogin.style.display === 'none' &&
+		window.getComputedStyle(startContainer).display === 'block'
+	) {
 		finishDayWork()
 	}
 }

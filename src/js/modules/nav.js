@@ -1,3 +1,5 @@
+import { enterCheck } from './start.js'
+
 const navStart = document.querySelector('.nav-start')
 const navTasks = document.querySelector('.nav-tasks')
 const contentStart = document.querySelector('.start')
