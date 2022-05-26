@@ -41,19 +41,21 @@ document.querySelector('#main-nav').addEventListener('click', e => {
 	const closestElement = e.target.closest('.nav-icons')
 	const navTarget = e.target
 
-	console.log(navTarget)
+	// console.log(navTarget)
 	if (!navTarget.classList.contains('nav-items')) {
 		clear()
 	}
-	setActive(closestElement)
+	setActive(closestElement, e, navTarget)
 })
 
-function clear(closestElement) {
+function clear(navTarget) {
 	navItems.forEach(element => element.classList.remove('nav-spy'))
 }
 
-function setActive(closestElement) {
-	closestElement.classList.add('nav-spy')
+function setActive(closestElement, e, navTarget) {
+	if (!navTarget.classList.contains('nav-items')) {
+		closestElement.classList.add('nav-spy')
+	}
 }
 
 navStart.addEventListener('click', showStart)
