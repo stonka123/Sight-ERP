@@ -8,7 +8,8 @@
 	width: 20vw;
 	max-width: 300px;
 	height: 100%;
-	background: $gradient-nav;
+	background: $light-white;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 	&-box {
 		display: flex;
 		align-items: center;
@@ -25,7 +26,7 @@
 			font-size: 1rem;
 			text-transform: uppercase;
 			font-family: 'Noto Sans', sans-serif;
-			color: $light-white;
+			color: $blue;
 			&--small {
 				font-size: 0.5rem;
 			}
@@ -45,8 +46,8 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: 60%;
-			padding: 0.3em 1em;
+			width: 100%;
+			// padding: 0.3em 1em;
 			transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 			&--icon {
 				align-self: center;
@@ -72,8 +73,14 @@
 		color: $attention;
 	}
 }
-
-
+// other
+// OTHER
+.icon-spy {
+	color: $logo-color;
+}
+.nav-spy {
+	border-left: 2px solid $logo-color;
+}
 
 @media (min-width: 900px) {
 	.nav-items__item--icon--href {
