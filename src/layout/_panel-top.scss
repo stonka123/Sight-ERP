@@ -7,7 +7,7 @@
 	height: 10vh;
 	background-color: $light-gray;
 	border-bottom: 1px solid $logo-color;
-	overflow: hidden;
+	// overflow: hidden;
 
 	&-burger {
 		display: inline-block;
@@ -26,6 +26,7 @@
 		transform: translateX(300%);
 		transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 		&__item {
+			position: relative;
 			padding: 0.5em;
 			margin-right: 0.7em;
 			&-notifications {
@@ -71,10 +72,30 @@
 	-webkit-transform: rotate(45deg) translate(-8px, -7px);
 	transform: rotate(45deg) translate(-8px, -7px);
 }
+
+.notifications {
+	position: absolute;
+	top: 8vh;
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	width: 180px;
+	left: -30px;
+	font-size: 1.2rem;
+	background-color: $white;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+	&__box {
+		display: flex;
+	}
+}
+
 // OTHER
 
 .panel-mobile-show {
 	transform: translateX(0);
+}
+.notifications-show {
+	display: flex;
 }
 
 @media (min-width: 900px) {

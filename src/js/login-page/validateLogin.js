@@ -1,4 +1,5 @@
 import { data } from '../../data/data.js'
+import { showAvatar } from '../modules/panel-top.js'
 const sectionLogin = document.querySelector('.login')
 const login = document.querySelector('#login')
 const password = document.querySelector('#password')
@@ -19,21 +20,6 @@ export const veryficationLogaut = () => {
 			errorParagraph.classList.add('show-error')
 		}
 	})
-}
-const panelTop = document.querySelector('.panel-box')
-let loginAvatar
-let PanelTopItem
-
-const showAvatar = avatar => {
-	PanelTopItem = document.createElement('div')
-	PanelTopItem.classList.add('panel-box__item')
-
-	loginAvatar = document.createElement('img')
-	loginAvatar.classList.add('panel-box__item-avatar')
-	loginAvatar.setAttribute('src', `${avatar}`)
-
-	panelTop.appendChild(PanelTopItem)
-	PanelTopItem.appendChild(loginAvatar)
 }
 
 const enterLogin = () => {
