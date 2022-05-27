@@ -14,7 +14,7 @@ export const showStart = () => {
 	if (contentArea.classList.contains('start') === false) {
 		contentStart.style.display = 'block'
 		contentTasks.style.display = 'none'
-		observeSection(navStart)
+		// observeSection(navStart)
 	}
 }
 
@@ -22,39 +22,47 @@ export const showTasks = () => {
 	if (contentArea.classList.contains('tasks') === false) {
 		contentTasks.style.display = 'flex'
 		contentStart.style.display = 'none'
-		observeSection(navTasks)
+		// observeSection(navTasks)
 	}
 }
 
-export const observeSection = e => {
-	if (e.hash === '#home') {
-		homeIcon.classList.add('icon-spy')
-		tasksIcon.classList.remove('icon-spy')
-	} else if (e.hash === '#tasks') {
-		tasksIcon.classList.add('icon-spy')
-		homeIcon.classList.remove('icon-spy')
-	}
-}
+// export const observeSection = e => {
+// 	if (e.hash === '#home') {
+// 		homeIcon.classList.add('icon-spy')
+// 		tasksIcon.classList.remove('icon-spy')
+// 	} else if (e.hash === '#tasks') {
+// 		tasksIcon.classList.add('icon-spy')
+// 		homeIcon.classList.remove('icon-spy')
+// 	}
+// }
+
 const navItems = [...document.querySelectorAll('.nav-icons')]
+const navIcons = [...document.querySelectorAll('.nav-items__item--icon')]
 
-document.querySelector('#main-nav').addEventListener('click', e => {
+document.querySelector('.nav-items').addEventListener('click', e => {
 	const closestElement = e.target.closest('.nav-icons')
+	if (!closestElement) {
+		return
+		console.log('lol')
+	}
+	const closestIcons = closestElement.children[0]
 	const navTarget = e.target
 
-	// console.log(navTarget)
 	if (!navTarget.classList.contains('nav-items')) {
 		clear()
 	}
-	setActive(closestElement, e, navTarget)
+	setActive(closestElement, e, navTarget, closestIcons)
 })
 
 function clear(navTarget) {
 	navItems.forEach(element => element.classList.remove('nav-spy'))
+	navIcons.forEach(element => element.classList.remove('icon-spy'))
 }
 
-function setActive(closestElement, e, navTarget) {
+function setActive(closestElement, e, navTarget, closestIcons) {
 	if (!navTarget.classList.contains('nav-items')) {
 		closestElement.classList.add('nav-spy')
+		closestIcons.classList.add('icon-spy')
 	}
 }
 
