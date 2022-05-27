@@ -25,19 +25,43 @@ export const showAvatar = avatar => {
 	panelTop.appendChild(PanelTopItem)
 	PanelTopItem.appendChild(loginAvatar)
 }
-notificationsIcon.addEventListener('click', () => {
-	setTimeout(() => {
-		if (!popupEl.classList.contains('notifications-show')) {
-			// Add class `show` to filterList element
-			popupEl.classList.add('notifications-show')
-		}
-	}, 150)
-})
 
-document.addEventListener('click', e => {
-	const isClosest = e.target.closest(popupQuerySelector)
-	if (!isClosest && notifications.classList.contains('notifications-show')) {
-		popupEl.classList.remove('notifications-show')
+document.querySelector('.dashboard').addEventListener('click', e => {
+	const notiTarget = e.target
+	const closestNoti = e.target.closest('.notifications')
+
+	console.log(notiTarget)
+
+	if (!notiTarget.classList.contains('notifications', 'panel-box__item-notifications ')) {
+		clear()
+	}
+	setActive(notiTarget, e)
+
+	function clear(notiTarget) {
+		notifications.classList.remove('notifications-show')
+	}
+
+	function setActive(notiTarget, e) {
+		if (notiTarget.classList.contains('panel-box__item-notifications')) {
+			notifications.classList.add('notifications-show')
+		}
 	}
 })
+
+// notificationsIcon.addEventListener('click', () => {
+// 	setTimeout(() => {
+// 		if (!popupEl.classList.contains('notifications-show')) {
+// 			// Add class `show` to filterList element
+// 			popupEl.classList.add('notifications-show')
+// 		}
+// 	}, 150)
+// })
+
+// document.addEventListener('click', e => {
+// 	const isClosest = e.target.closest(popupQuerySelector)
+
+// 	if (!isClosest && notifications.classList.contains('notifications-show')) {
+// 		popupEl.classList.remove('notifications-show')
+// 	}
+// })
 panelBurgerBtn.addEventListener('click', showPanelIconMobile)

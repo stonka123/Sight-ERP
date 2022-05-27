@@ -20,7 +20,7 @@
 		top: 5vh;
 		transform: translateY(-50%);
 		svg {
-			fill: $blue;
+			fill: $logo-color;
 			width: 10px;
 			margin: 0.3em;
 		}
@@ -28,7 +28,7 @@
 			font-size: 1rem;
 			text-transform: uppercase;
 			font-family: 'Noto Sans', sans-serif;
-			color: $blue;
+			color: $logo-color;
 			&--small {
 				font-size: 0.5rem;
 			}
