@@ -47,21 +47,4 @@ document.querySelector('.dashboard').addEventListener('click', e => {
 		}
 	}
 })
-
-// notificationsIcon.addEventListener('click', () => {
-// 	setTimeout(() => {
-// 		if (!popupEl.classList.contains('notifications-show')) {
-// 			// Add class `show` to filterList element
-// 			popupEl.classList.add('notifications-show')
-// 		}
-// 	}, 150)
-// })
-
-// document.addEventListener('click', e => {
-// 	const isClosest = e.target.closest(popupQuerySelector)
-
-// 	if (!isClosest && notifications.classList.contains('notifications-show')) {
-// 		popupEl.classList.remove('notifications-show')
-// 	}
-// })
 panelBurgerBtn.addEventListener('click', showPanelIconMobile)

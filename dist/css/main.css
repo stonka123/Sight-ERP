@@ -492,7 +492,19 @@
   display: block;
 }
 
+.orders {
+  display: none;
+}
+
 .tasks {
+  display: none;
+}
+
+.shop {
+  display: none;
+}
+
+.company {
   display: none;
 }
 
