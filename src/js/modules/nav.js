@@ -14,55 +14,43 @@ const mainContent = document.querySelector('.main-content')
 const contentArea = document.querySelector('.content')
 const homeIcon = document.querySelector('.start-icon')
 const tasksIcon = document.querySelector('.tasks-icon')
-// const navItems = document.querySelectorAll('.nav-items__item')
 
-export const showStart = () => {
-	if (contentArea.classList.contains('start') === false) {
-		contentStart.style.display = 'block'
-		contentTasks.style.display = 'none'
-		contentShop.style.display = 'none'
-		contentCompany.style.display = 'none'
-		contentOrders.style.display = 'none'
-	}
-}
-export const showOrders = () => {
-	if (contentArea.classList.contains('orders') === false) {
-		contentOrders.style.display = 'block'
-		contentCompany.style.display = 'none'
-		contentShop.style.display = 'none'
-		contentStart.style.display = 'none'
-		contentTasks.style.display = 'none'
-	}
-}
+const sectionTest = [navStart, navOrders, navShop, navTasks, navCompany]
 
-export const showTasks = () => {
-	if (contentArea.classList.contains('tasks') === false) {
-		contentTasks.style.display = 'block'
-		contentStart.style.display = 'none'
-		contentShop.style.display = 'none'
-		contentCompany.style.display = 'none'
-		contentOrders.style.display = 'none'
-	}
-}
-export const showShop = () => {
-	if (contentArea.classList.contains('shop') === false) {
-		contentShop.style.display = 'block'
-		contentStart.style.display = 'none'
-		contentTasks.style.display = 'none'
-		contentCompany.style.display = 'none'
-		contentOrders.style.display = 'none'
-	}
-}
-export const showCompany = () => {
-	if (contentArea.classList.contains('company') === false) {
-		contentCompany.style.display = 'block'
-		contentShop.style.display = 'none'
-		contentStart.style.display = 'none'
-		contentTasks.style.display = 'none'
-		contentOrders.style.display = 'none'
-	}
-}
+const sections = document.querySelectorAll('.nav-items__item')
 
+export const showContent = () => {
+	sectionTest.forEach(item => {
+		item.addEventListener('click', e => {
+			const targetNav = e.target.closest('.nav-items__item')
+
+			if (targetNav.classList.contains('nav-start')) {
+				clearSection()
+				contentStart.style.display = 'block'
+			} else if (targetNav.classList.contains('nav-tasks')) {
+				clearSection()
+				contentTasks.style.display = 'flex'
+			} else if (targetNav.classList.contains('nav-shop')) {
+				clearSection()
+				contentShop.style.display = 'flex'
+			} else if (targetNav.classList.contains('nav-orders')) {
+				clearSection()
+				contentOrders.style.display = 'flex'
+			} else if (targetNav.classList.contains('nav-company')) {
+				clearSection()
+				contentCompany.style.display = 'flex'
+			}
+		})
+		function clearSection() {
+			contentTasks.style.display = 'none'
+			contentStart.style.display = 'none'
+			contentShop.style.display = 'none'
+			contentCompany.style.display = 'none'
+			contentOrders.style.display = 'none'
+		}
+	})
+}
+showContent()
 const navItems = [...document.querySelectorAll('.nav-icons')]
 const navIcons = [...document.querySelectorAll('.nav-items__item--icon')]
 
@@ -93,8 +81,8 @@ function setActive(closestElement, e, navTarget, closestIcons) {
 	}
 }
 
-navStart.addEventListener('click', showStart)
-navTasks.addEventListener('click', showTasks)
-navShop.addEventListener('click', showShop)
-navCompany.addEventListener('click', showCompany)
-navOrders.addEventListener('click', showOrders)
+// navStart.addEventListener('click', showStart)
+// navTasks.addEventListener('click', showTasks)
+// navShop.addEventListener('click', showShop)
+// navCompany.addEventListener('click', showCompany)
+// navOrders.addEventListener('click', showOrders)

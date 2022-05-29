@@ -1,4 +1,6 @@
 import { data } from '../../data/data.js'
+import './shop.js'
+
 const panelTop = document.querySelector('.panel-box')
 const panelBurgerBtn = document.querySelector('.panel-burger')
 const notificationsIcon = document.querySelector('.panel-box__item-notifications')
@@ -28,23 +30,16 @@ export const showAvatar = avatar => {
 
 document.querySelector('.dashboard').addEventListener('click', e => {
 	const notiTarget = e.target
-	const closestNoti = e.target.closest('.notifications')
+	const closestNoti = e.target.closest('.panel-box__item-notifications')
+	const targetPopup = e.target.closest('.notifications')
 
-	console.log(notiTarget)
-
-	if (!notiTarget.classList.contains('notifications', 'panel-box__item-notifications ')) {
-		clear()
-	}
-	setActive(notiTarget, e)
-
-	function clear(notiTarget) {
+	if (closestNoti) {
+		notifications.classList.toggle('notifications-show')
+	} else if (targetPopup) {
+		notifications.classList.add('notifications-show')
+	} else if (!closestNoti) {
 		notifications.classList.remove('notifications-show')
 	}
-
-	function setActive(notiTarget, e) {
-		if (notiTarget.classList.contains('panel-box__item-notifications')) {
-			notifications.classList.add('notifications-show')
-		}
-	}
 })
+
 panelBurgerBtn.addEventListener('click', showPanelIconMobile)

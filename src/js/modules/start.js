@@ -1,9 +1,9 @@
-const startBtn = document.querySelector('.container-start__text-button--start')
-const workPanel = document.querySelector('.container-start')
+const startBtn = document.querySelector('.start-container__text-button--start')
+const workPanel = document.querySelector('.start-container')
 const startContainer = document.querySelector('.start')
 const startPresence = document.querySelector('.start-presence')
-const endButton = document.querySelector('.container-start__text-button--end')
-const titleWorkInfo = document.querySelector('.container-start__text')
+const endButton = document.querySelector('.start-container__text-button--end')
+const titleWorkInfo = document.querySelector('.start-container__text')
 const sectionLogin = document.querySelector('.login')
 
 let $startBox

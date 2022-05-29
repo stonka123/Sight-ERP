@@ -1,10 +1,12 @@
 @import '../modules/colors';
+@import '../modules/mixins';
 @import '../layout/login-page';
 @import '../layout/nav';
 @import '../layout/panel-top';
 @import '../layout/main-content';
 @import '../layout/start';
 @import '../layout/tasks';
+@import '../layout/shop';
 *,
 *::before,
 *::after {
@@ -12,7 +14,6 @@
 	padding: 0;
 	margin: 0;
 }
-
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
@@ -38,10 +39,15 @@ body {
 	height: 100vh;
 	overflow: hidden;
 
+
+// 
+
 	display: none;
 }
 .login {
 	display: none;
+
+// 
 
 	display: flex;
 }

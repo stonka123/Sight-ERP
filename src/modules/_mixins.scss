@@ -1,0 +1,12 @@
+@mixin containerSection {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	margin: 1em auto;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	width: 90%;
+	height: 90%;
+	overflow-y: auto;
+	
+}
