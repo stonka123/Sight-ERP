@@ -1,5 +1,6 @@
 @import '../modules/colors';
 @import '../modules/mixins';
+@import '../modules/components';
 @import '../layout/login-page';
 @import '../layout/nav';
 @import '../layout/panel-top';
@@ -39,17 +40,16 @@ body {
 	height: 100vh;
 	overflow: hidden;
 
+	//
 
-// 
-
-	display: none;
+	// display: none;
 }
 .login {
 	display: none;
 
-// 
+	//
 
-	display: flex;
+	// display: flex;
 }
 
 .wrapper {

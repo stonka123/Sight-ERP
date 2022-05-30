@@ -1,0 +1,24 @@
+// OTHER
+
+.header {
+	text-align: center;
+	font-size: 1rem;
+	width: 100%;
+	padding: 1em;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 0px 0px 8px 8px;
+	transform: translateY(0);
+	transition: transform 1s;
+	color: $dark-gray;
+}
+.hide-header {
+	transform: translateY(-100%);
+}
+
+//MEDIA
+
+@media (min-width: 900px) {
+	.header {
+		font-size: 1.8rem;
+	}
+}

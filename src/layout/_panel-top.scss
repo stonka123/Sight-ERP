@@ -12,37 +12,38 @@
 	&-burger {
 		display: inline-block;
 		cursor: pointer;
-		width: 50%;
 	}
 	&-box {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
 		align-content: flex-end;
-		color: $dark-gray;
+		color: $gray;
 		width: 100%;
 		transform: translateX(300%);
 		transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 		&__item {
 			position: relative;
-			padding: 0.5em;
 			margin-right: 0.7em;
-			&-notifications {
+			font-size: 1.4rem;
+			&-notifications,
+			&-basket,
+			&-avatar,
+			&-settings,
+			&-language {
 				cursor: pointer;
-				width: 100%;
-				font-size: 2rem;
+				padding: 0.5em;
 			}
+
+			&-notifications {
+				width: 100%;
+			}
+
 			&-avatar {
 				width: 30px;
 				height: 30px;
 				border-radius: 50%;
 				object-fit: cover;
-			}
-			&-settings {
-				cursor: pointer;
-			}
-			&-language {
-				cursor: pointer;
 			}
 		}
 	}
@@ -50,16 +51,17 @@
 .bar1,
 .bar2,
 .bar3 {
-	width: 30px;
-	height: 4px;
+	width: 24px;
+	height: 2px;
 	background-color: $dark-gray;
-	margin: 5px 1em;
+	margin: 5px 0.7em;
+
 	transition: 0.3s;
 }
 
 .change .bar1 {
 	-webkit-transform: rotate(-45deg) translate(-6px, 4px);
-	transform: rotate(-45deg) translate(-6px, 4px);
+	transform: rotate(-45deg) translate(-4px, 6px);
 }
 
 .change .bar2 {
@@ -68,10 +70,31 @@
 
 .change .bar3 {
 	-webkit-transform: rotate(45deg) translate(-8px, -7px);
-	transform: rotate(45deg) translate(-8px, -7px);
+	transform: rotate(45deg) translate(-4px, -6px);
 }
 
 .notifications {
+	position: absolute;
+	top: 10vh;
+	right: 0;
+	display: none;
+	bottom: 0;
+	align-items: center;
+	flex-direction: column;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	border-radius: 4px;
+	font-size: 1.2rem;
+	background-color: $white;
+	width: 150px;
+	height: 40px;
+	background-color: $light-white;
+	&__title {
+		font-size: 0.9rem;
+		font-style: italic;
+		text-align: center;
+	}
+}
+.basket {
 	position: absolute;
 	top: 10vh;
 	right: 0;

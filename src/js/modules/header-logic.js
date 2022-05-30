@@ -1,14 +1,14 @@
-const headerShop = document.querySelector('.shop__header')
-
 document.querySelector('.dashboard').addEventListener('click', e => {
-	const contentShop = document.querySelector('.shop')
-	const shopTarget = e.target.closest('.nav-shop')
-	console.log(shopTarget)
-	if (!shopTarget) {
-		headerShop.classList.add('hide-header')
-	} else {
-		headerShop.classList.remove('hide-header')
-	}
-})
+	const headers = [...document.querySelectorAll('.header')]
 
-///
+	headers.forEach(el => {
+		const shopTarget = e.target.closest('.nav-items')
+		const found = el.classList.contains('header')
+
+		if (!shopTarget) {
+			el.classList.add('hide-header')
+		} else {
+			el.classList.remove('hide-header')
+		}
+	})
+})

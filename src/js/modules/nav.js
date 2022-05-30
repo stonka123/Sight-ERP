@@ -81,8 +81,3 @@ function setActive(closestElement, e, navTarget, closestIcons) {
 	}
 }
 
-// navStart.addEventListener('click', showStart)
-// navTasks.addEventListener('click', showTasks)
-// navShop.addEventListener('click', showShop)
-// navCompany.addEventListener('click', showCompany)
-// navOrders.addEventListener('click', showOrders)

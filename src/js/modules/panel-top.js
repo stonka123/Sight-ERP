@@ -42,4 +42,5 @@ document.querySelector('.dashboard').addEventListener('click', e => {
 	}
 })
 
+
 panelBurgerBtn.addEventListener('click', showPanelIconMobile)

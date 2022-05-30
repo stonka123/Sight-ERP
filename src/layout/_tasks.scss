@@ -1,19 +1,24 @@
 // OTHER
 .tasks {
 	align-items: center;
-	justify-content: center;
-	width: 100%;
+	justify-content: flex-start;
+	flex-direction: column;
 	height: 100%;
-
+	width: 90%;
+	&__header {
+		background-color: $tasks-header;
+	}
 	&-container {
-		width: 100%;
+		// width: 90%;
+		// text-align: center;
+		// background: #fff;
+		// box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
+		// border-radius: 5px;
+		@include containerSection;
 		text-align: center;
-		background: #fff;
-		box-shadow: 4px 4px 5px rgba(82, 82, 82, 0.4);
-		border-radius: 5px;
 		&__top {
 			padding: 10px;
-			border-radius: 5px 5px 0 0;
+
 			background-image: linear-gradient(340deg, #045de9 0%, #09c6f9 100%);
 			&-title {
 				margin-bottom: 20px;
