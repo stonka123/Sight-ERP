@@ -527,6 +527,10 @@
   display: flex;
 }
 
+.alert {
+  color: red;
+}
+
 @media (min-width: 900px) {
   .panel-burger {
     display: none;
@@ -1082,10 +1086,14 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  display: none;
 }
 
 .login {
   display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .wrapper {
