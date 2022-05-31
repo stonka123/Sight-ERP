@@ -10,6 +10,7 @@
 	transform: translateY(0);
 	transition: transform 1s;
 	color: $dark-gray;
+	box-shadow: rgba(0, 0, 0, 0.45) 0 10px 20px -20px;
 }
 .hide-header {
 	transform: translateY(-100%);

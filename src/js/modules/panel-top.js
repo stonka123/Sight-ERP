@@ -40,20 +40,22 @@ document.querySelector('.dashboard').addEventListener('click', e => {
 
 	if (closestNoti) {
 		notifications.classList.toggle('notifications-show')
-		alert()
+		notificationsIcon.classList.toggle('alert')
 	} else if (targetPopup) {
 		notifications.classList.add('notifications-show')
-		alert()
 	} else if (!closestNoti) {
 		notifications.classList.remove('notifications-show')
-		clear()
+		notificationsIcon.classList.remove('alert')
 	}
 
-	function alert() {
-		notificationsIcon.classList.add('alert')
-	}
-	function clear() {
-		notificationsIcon.classList.remove('alert')
+	if (closestBasket) {
+		basket.classList.toggle('notifications-show')
+		basketIcon.classList.toggle('alert')
+	} else if (targetBasket) {
+		basket.classList.add('notifications-show')
+	} else if (!closestBasket) {
+		basket.classList.remove('notifications-show')
+		basketIcon.classList.remove('alert')
 	}
 })
 

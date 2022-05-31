@@ -1,3 +1,5 @@
+@import '../modules/colors';
+
 .panel {
 	display: flex;
 	align-items: center;
@@ -125,7 +127,7 @@
 	display: flex;
 }
 .alert {
-	color: red;
+	color: $logo-color;
 }
 @media (min-width: 900px) {
 	.panel-burger {

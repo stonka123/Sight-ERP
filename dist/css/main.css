@@ -13,6 +13,8 @@
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
   color: #414141;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0 10px 20px -20px;
+          box-shadow: rgba(0, 0, 0, 0.45) 0 10px 20px -20px;
 }
 
 .hide-header {
@@ -528,7 +530,7 @@
 }
 
 .alert {
-  color: red;
+  color: #7e49f8;
 }
 
 @media (min-width: 900px) {
