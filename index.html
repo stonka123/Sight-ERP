@@ -160,15 +160,17 @@
                             <div class="orders-container__panel-top">
                                 <div class="orders-container__panel-top-label">Wpisz numer zlecenia</div>
                                 <input class="orders-container__panel-top-input" placeholder="Numer zlecenia"></input>
+                                <p class="orders-container__panel-top--error">Wpisz numer zlecenia!</p>
                             </div>
                             <div class="orders-container__panel-mid">
                                 <div class="orders-container__panel-mid-label">Wybierz stanowisko pracy: </div>
-                                <select class="orders-container__panel-mid-input">
-                                    <option value="0" selected disabled>-- Wybierz stanowisko --</option>
+                                <select id="category" class="orders-container__panel-mid-input">
+                                    <option value="0" disabled selected>-- Wybierz stanowisko --</option>
                                     <option value="1">Tokarka numeryczna XC 75</option>
                                     <option value="1">Frezarka konwencjonalna DMU 60T</option>
                                     <option value="1">Piła taśmowa 200mm</option>
                                 </select>
+                                <p class="orders-container__panel-mid--error">Wybierz stanowisko!</p>
                             </div>
                             <div class="orders-container__panel-bottom">
                                 <button class="orders-container__panel-bottom-add">Rozpocznij <i
@@ -179,21 +181,9 @@
 
                         </div>
                         <div class="orders-container__area">
-                            <div class="orders-container__area-new">
-                                <p class="orders-container__area-new-number">1.</p>
-                                <div class="orders-container__area-new-left">
-                                    <label for="" class="orders-container__area-new-left-label">Numer zlecenia:</label>
-                                    <div class="orders-container__area-new-left-orders">22/100</div>
-                                </div>
-                                <div class="orders-container__area-new-right"><label for=""
-                                        class="orders-container__area-new-right-label">Stanowisko: </label>
-                                    <div class="orders-container__area-new-right-position">Frezarka konwencjonalna DMU
-                                        60T
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="orders-container__area-new">
+
+                            <!-- <div class="orders-container__area-new">
                                 <p class="orders-container__area-new-number">1.</p>
                                 <div class="orders-container__area-new-left">
                                     <label for="" class="orders-container__area-new-left-label">Numer zlecenia:</label>
@@ -205,22 +195,14 @@
                                         60T
                                     </div>
                                 </div>
-                            </div>
-                            <div class="orders-container__area-new">
-                                <p class="orders-container__area-new-number">1.</p>
-                                <div class="orders-container__area-new-left">
-                                    <label for="" class="orders-container__area-new-left-label">Numer zlecenia:</label>
-                                    <div class="orders-container__area-new-left-orders">22/100</div>
-                                </div>
-                                <div class="orders-container__area-new-right"><label for=""
-                                        class="orders-container__area-new-right-label">Stanowisko: </label>
-                                    <div class="orders-container__area-new-right-position">Frezarka konwencjonalna DMU
-                                        60T
-                                    </div>
-                                </div>
-                            </div>
+                            </div> -->
+
+
 
                         </div>
+
+
+
                     </div>
                 </div>
                 <div class="tasks section">

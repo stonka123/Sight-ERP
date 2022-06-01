@@ -20,14 +20,18 @@
 			text-align: center;
 			&-button--start,
 			&-button--end {
-				padding: 1em;
-				padding: 0.5em 1em;
-				margin-top: 1em;
+				background-color: $start-header;
 				cursor: pointer;
 				border: none;
-				border-radius: 9px;
-				background-color: rgb(54, 141, 54);
-				color: $white;
+				padding: 0.7em 1.5em;
+				box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+				color: $dark-gray;
+				margin-top: 1em;
+				transition: background-color 0.4s, color 0.4s;
+				&:hover {
+					background-color: orange;
+					color: $light-white;
+				}
 			}
 			&-button--end {
 				background-color: rgb(161, 161, 161);
@@ -65,7 +69,7 @@
 	&-hour-start,
 	&-hour-end {
 		margin-right: 1em;
-		border-radius: 8px;
+
 		padding: 0.7em 0.4em;
 	}
 	&-day {
