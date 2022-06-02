@@ -777,6 +777,14 @@
   overflow-y: auto;
 }
 
+.orders-container--error {
+  color: #fa4747;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.5em 1em;
+  visibility: hidden;
+}
+
 .orders-container__start {
   cursor: pointer;
   background-color: #ffe3af;

@@ -14,6 +14,14 @@
 	}
 	&-container {
 		@include containerSection;
+
+		&--error {
+			color: $attention;
+			text-align: center;
+			font-size: 1.2rem;
+			padding: 0.5em 1em;
+			visibility: hidden;
+		}
 		&__start {
 			cursor: pointer;
 			background-color: $orders-header;

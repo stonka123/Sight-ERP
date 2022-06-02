@@ -3,7 +3,7 @@ const workPanel = document.querySelector('.start-container')
 const startContainer = document.querySelector('.start')
 const startPresence = document.querySelector('.start-presence')
 const endButton = document.querySelector('.start-container__text-button--end')
-const titleWorkInfo = document.querySelector('.start-container__text')
+export const titleWorkInfo = document.querySelector('.start-container__text')
 const sectionLogin = document.querySelector('.login')
 
 let $startBox
@@ -19,6 +19,7 @@ let $today
 let $startDate
 let $startHour
 let endHourWork
+export let active = true
 
 export const startWork = () => {
 	const day = document.getElementById('presence-day-input')
@@ -27,7 +28,7 @@ export const startWork = () => {
 	createDayWork()
 }
 
-const createDayWork = () => {
+export const createDayWork = () => {
 	let $now = new Date()
 	let $today = new Date()
 	let $startDate = $now.getFullYear() + '-' + ($now.getMonth() + 1) + '-' + $now.getDate()
@@ -69,6 +70,7 @@ const createDayWork = () => {
 	endHourInput = document.createElement('span')
 	endHourInput.setAttribute('id', 'presence-hour-end-input')
 	endHourInput.innerText = endHourWork
+	// console.log(active)
 
 	// append
 	startPresence.appendChild($startBox)
@@ -76,10 +78,9 @@ const createDayWork = () => {
 	$dzien.appendChild($startInput)
 	$startBox.appendChild($godzina)
 	$godzina.appendChild($startHourInput)
-
-	// endBtn.addEventListener('click', finishDayWork)
 }
-const finishDayWork = () => {
+export const finishDayWork = () => {
+	let active = false
 	// title change
 	titleWorkInfo.textContent = 'Zacznij pracę'
 
@@ -97,6 +98,8 @@ const finishDayWork = () => {
 	endWork.appendChild(endHourInput)
 	endButton.style.display = 'none'
 	startBtn.style.display = 'block'
+
+	// console.log(active)
 }
 export const enterCheck = () => {
 	if (
