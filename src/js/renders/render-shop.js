@@ -1,4 +1,5 @@
 import { shopItems } from '../../data/shop/shop-items.js'
+import { LogicCard } from '../logic/shop-card.js'
 
 const myConetnt = document.querySelector('.shop__container')
 
@@ -22,4 +23,6 @@ window.addEventListener('DOMContentLoaded', function () {
 		})
 		.join('')
 	myConetnt.innerHTML = showInHtml
+
+	LogicCard()
 })

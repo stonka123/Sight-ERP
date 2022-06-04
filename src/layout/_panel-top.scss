@@ -15,6 +15,25 @@
 		display: inline-block;
 		cursor: pointer;
 	}
+	&-login {
+		// text-align: center;
+		position: absolute;
+		right: 1em;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		flex-direction: column;
+		margin-right: 1em;
+		font-size: 1rem;
+		padding: 0.2em;
+		color: $gray;
+		font-style: italic;
+		visibility: visible;
+		&--name {
+			font-style: normal;
+			font-weight: bold;
+		}
+	}
 	&-box {
 		display: flex;
 		align-items: center;
@@ -24,6 +43,7 @@
 		width: 100%;
 		transform: translateX(300%);
 		transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+		z-index: 2;
 		&__item {
 			position: relative;
 			margin-right: 0.7em;
@@ -108,18 +128,86 @@
 	border-radius: 4px;
 	font-size: 1.2rem;
 	background-color: $white;
-	width: 150px;
-	height: 40px;
+	// width: 150px;
+	width: 100%;
+	max-width: 500px;
+	height: 170px;
 	background-color: $light-white;
 	&__title {
 		font-size: 0.9rem;
 		font-style: italic;
 		text-align: center;
 	}
+	&__box {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		padding: 0.5em;
+		width: 100%;
+		max-width: 500px;
+		border-bottom: 1px solid $logo-color;
+		&-img {
+			border: 1px solid $shop-header;
+			padding: 0.25em;
+			width: 50px;
+			height: 50px;
+			object-fit: contain;
+		}
+		&-name {
+			width: 15%;
+			padding: 0.25em;
+			font-size: 1rem;
+		}
+		&-price {
+			padding: 0.25em;
+			font-size: 1rem;
+		}
+		&-amount {
+			padding: 0.1em;
+			width: 20px;
+		}
+		&-btn {
+			cursor: pointer;
+			color: $gray;
+			color: $dark-gray;
+			border: none;
+			padding: 0.5em 0.75em;
+		}
+	}
+	&-cost {
+		align-content: flex-end;
+		width: 100%;
+		text-align: end;
+		padding: 1em;
+	}
+	// &:before {
+	// 	content: attr(data-count);
+	// 	color: green;
+	// 	position: absolute;
+	// 	right: 0;
+	// 	font-size: 1rem;
+	// 	text-align: center;
+	// 	bottom: -0;
+	// 	width: 100px;
+	// 	height: 100px;
+	// 	// background: red;
+	// 	border-radius: 50%;
+	// 	opacity: 1;
+	// 	z-index: 10;
+	// }
+	// &.zero:before {
+	// 	opacity: 1;
+	// 	z-index: 10;
+	// }
 }
-
+.test1 {
+	position: relative;
+}
 // OTHER
-
+.showNamePanelTop {
+	visibility: hidden;
+	// display: none;
+}
 .panel-mobile-show {
 	transform: translateX(0);
 }
@@ -135,5 +223,9 @@
 	}
 	.panel-box {
 		transform: translateX(0);
+	}
+	.panel-login {
+		left: 1em;
+		margin-left: 1em;
 	}
 }

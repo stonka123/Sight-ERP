@@ -1,5 +1,5 @@
-import { data } from '../../data/data.js'
-import './shop.js'
+// import { data } from '../../data/data.js'
+import '../logic/shop-card.js'
 
 const panelTop = document.querySelector('.panel-box')
 const panelBurgerBtn = document.querySelector('.panel-burger')
@@ -9,13 +9,15 @@ const notifications = document.querySelector('.notifications')
 const basket = document.querySelector('.basket')
 const popupQuerySelector = '#popup'
 const popupEl = document.querySelector(popupQuerySelector)
-
+const mainPanel = document.querySelector('.panel')
+const panelLogin = document.querySelector('.panel-login')
 let loginAvatar
 let PanelTopItem
 
 export const showPanelIconMobile = () => {
 	panelTop.classList.toggle('panel-mobile-show')
 	panelBurgerBtn.classList.toggle('change')
+	panelLogin.classList.toggle('showNamePanelTop')
 }
 
 export const showAvatar = avatar => {
@@ -58,5 +60,12 @@ document.querySelector('.dashboard').addEventListener('click', e => {
 		basketIcon.classList.remove('alert')
 	}
 })
+
+export const showProfileName = (surname, name) => {
+	const nameProfile = document.createElement('span')
+	nameProfile.classList.add('panel-login--name')
+	nameProfile.innerHTML = `${name} ${surname}`
+	panelLogin.append(nameProfile)
+}
 
 panelBurgerBtn.addEventListener('click', showPanelIconMobile)

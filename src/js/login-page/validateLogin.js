@@ -1,5 +1,5 @@
 import { data } from '../../data/data.js'
-import { showAvatar } from '../modules/panel-top.js'
+import { showAvatar, showProfileName } from '../modules/panel-top.js'
 const sectionLogin = document.querySelector('.login')
 const login = document.querySelector('#login')
 const password = document.querySelector('#password')
@@ -14,8 +14,8 @@ export const veryficationLogaut = () => {
 			document.getElementsByClassName('dashboard')[0].style.display = 'flex'
 			enterLogin()
 
-			console.log(el.avatar)
 			showAvatar(el.avatar)
+			showProfileName(el.surname, el.name)
 		} else {
 			errorParagraph.classList.add('show-error')
 		}
