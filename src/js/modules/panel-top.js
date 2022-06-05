@@ -39,6 +39,7 @@ document.querySelector('.dashboard').addEventListener('click', e => {
 	const closestBasket = e.target.closest('.panel-box__item-basket')
 	const targetPopup = e.target.closest('.notifications')
 	const targetBasket = e.target.closest('.basket')
+	const basketBoxBtnDelete = e.target.closest('.basket__box-btn')
 
 	if (closestNoti) {
 		notifications.classList.toggle('notifications-show')
@@ -55,7 +56,7 @@ document.querySelector('.dashboard').addEventListener('click', e => {
 		basketIcon.classList.toggle('alert')
 	} else if (targetBasket) {
 		basket.classList.add('notifications-show')
-	} else if (!closestBasket) {
+	} else if (!closestBasket && !basketBoxBtnDelete) {
 		basket.classList.remove('notifications-show')
 		basketIcon.classList.remove('alert')
 	}
@@ -67,5 +68,8 @@ export const showProfileName = (surname, name) => {
 	nameProfile.innerHTML = `${name} ${surname}`
 	panelLogin.append(nameProfile)
 }
+
+
+
 
 panelBurgerBtn.addEventListener('click', showPanelIconMobile)

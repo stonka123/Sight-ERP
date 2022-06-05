@@ -1,0 +1,17 @@
+.company {
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	height: 100%;
+	width: 90%;
+	&__header {
+		background-color: $company-header;
+	}
+	&__container {
+		@include containerSection;
+		justify-content: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: start;
+	}
+}

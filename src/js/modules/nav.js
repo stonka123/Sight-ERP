@@ -58,7 +58,6 @@ document.querySelector('.nav-items').addEventListener('click', e => {
 	const closestElement = e.target.closest('.nav-icons')
 	if (!closestElement) {
 		return
-		console.log('lol')
 	}
 	const closestIcons = closestElement.children[0]
 	const navTarget = e.target
@@ -80,4 +79,3 @@ function setActive(closestElement, e, navTarget, closestIcons) {
 		closestIcons.classList.add('icon-spy')
 	}
 }
-
