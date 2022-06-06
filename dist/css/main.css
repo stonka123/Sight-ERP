@@ -537,6 +537,7 @@
 }
 
 .basket__info {
+  padding: 1em;
   font-size: 0.9rem;
   font-style: italic;
   text-align: center;
@@ -601,6 +602,7 @@
 }
 
 .basket-cost {
+  display: none;
   -ms-flex-line-pack: end;
       align-content: flex-end;
   width: 100%;
@@ -650,6 +652,20 @@
   color: #7e49f8;
 }
 
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.display-block {
+  display: block;
+}
+
 @media (min-width: 900px) {
   .panel-burger {
     display: none;
@@ -670,6 +686,7 @@
 
 .start {
   display: block;
+  display: none;
 }
 
 .orders {
@@ -682,6 +699,9 @@
 
 .shop {
   display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .company {
@@ -1528,14 +1548,10 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  display: none;
 }
 
 .login {
   display: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .wrapper {

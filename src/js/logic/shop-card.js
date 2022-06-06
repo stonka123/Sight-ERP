@@ -9,6 +9,7 @@ if (document.readyState == 'loading') {
 
 function ready() {
 	const removeCartItemButton = document.getElementsByClassName('basket__box-btn')
+
 	for (let i = 0; i < removeCartItemButton.length; i++) {
 		const button = removeCartItemButton[i]
 		button.addEventListener('click', removeCartItem)
@@ -42,6 +43,19 @@ function quantityChanged(event) {
 	updateCartTotal()
 }
 
+function checkEmptyShopCart(total) {
+	const basketInfoEmpty = document.getElementById('basket__info')
+	const basketInfoCostEmpty = document.getElementById('basket-cost')
+
+	if (total === '0.00') {
+		basketInfoEmpty.style.display = 'flex'
+		basketInfoCostEmpty.style.display = 'none'
+	} else {
+		basketInfoEmpty.style.display = 'none'
+		basketInfoCostEmpty.style.display = 'block'
+	}
+}
+
 // add
 function addToCartClicked(event) {
 	const button = event.target
@@ -50,8 +64,10 @@ function addToCartClicked(event) {
 	const title = shopItem.getElementsByClassName('product__bottom-title')[0].innerText
 	const price = shopItem.getElementsByClassName('product__bottom-price')[0].innerText
 	const imageSrc = imageItem.getElementsByClassName('product__top-img')[0].src
+
 	console.log(title, price, imageSrc)
 	addItemtoCard(title, price, imageSrc)
+
 	updateCartTotal()
 }
 function addItemtoCard(title, price, imageSrc) {
@@ -65,10 +81,11 @@ function addItemtoCard(title, price, imageSrc) {
 			return
 		}
 	}
+
 	const cartRowContent = `  <img src="${imageSrc}" class="basket__box-img" alt="">
     <p class="basket__box-name">${title}</p>
 <p class="basket__box-price">${price} <span class="basket__box-price--currency">zł</span></p>
-<input class="basket__box-amount" type="number" min="0" value="1">
+<input class="basket__box-amount" type="number" min="1" value="1">
 <button class="basket__box-btn">Usuń</button>
 `
 	cartRow.innerHTML = cartRowContent
@@ -93,4 +110,5 @@ const updateCartTotal = () => {
 
 	total = total.toFixed(2)
 	document.getElementsByClassName('basket-cost--currency')[0].innerText = total + ' zł'
+	checkEmptyShopCart(total)
 }

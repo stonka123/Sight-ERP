@@ -133,6 +133,8 @@
 	background-color: $white;
 
 	&__info {
+		// display: flex;
+		padding: 1em;
 		font-size: 0.9rem;
 		font-style: italic;
 		text-align: center;
@@ -182,6 +184,7 @@
 		}
 	}
 	&-cost {
+		display: none;
 		align-content: flex-end;
 		width: 100%;
 		text-align: end;
@@ -221,6 +224,15 @@
 }
 .alert {
 	color: $logo-color;
+}
+.display-none {
+	display: none;
+}
+.display-flex {
+	display: flex;
+}
+.display-block {
+	display: block;
 }
 @media (min-width: 900px) {
 	.panel-burger {
