@@ -26,10 +26,18 @@ function ready() {
 		const button = addToCartButtons[i]
 		button.addEventListener('click', addToCartClicked)
 	}
+	const addToCartButtonss = document.getElementsByClassName('product__bottom-add')
+	for (let i = 0; i < addToCartButtonss.length; i++) {
+		const button = addToCartButtonss[i]
+		button.addEventListener('click', dataCount)
+	}
 }
 // remove
 function removeCartItem(evenet) {
 	const buttonClicked = event.target
+	const basketIcon = document.querySelector('.basket-icon')
+	let add = Number(basketIcon.getAttribute('data-count') || 0)
+	basketIcon.setAttribute('data-count', add - 1)
 	buttonClicked.parentElement.remove()
 	updateCartTotal()
 }
@@ -37,6 +45,7 @@ function removeCartItem(evenet) {
 
 function quantityChanged(event) {
 	const input = event.target
+
 	if (isNaN(input.value) || input.value <= 0) {
 		input.value = 1
 	}
@@ -55,6 +64,14 @@ function checkEmptyShopCart(total) {
 		basketInfoCostEmpty.style.display = 'block'
 	}
 }
+// count dataCount
+function dataCount() {
+	const products = document.getElementsByClassName('products')
+	const Addbutton = document.getElementsByClassName('product__bottom-add')
+	const basketIcon = document.querySelector('.basket-icon')
+	let add = Number(basketIcon.getAttribute('data-count') || 0)
+	basketIcon.setAttribute('data-count', add + 1)
+}
 
 // add
 function addToCartClicked(event) {
@@ -67,7 +84,6 @@ function addToCartClicked(event) {
 
 	console.log(title, price, imageSrc)
 	addItemtoCard(title, price, imageSrc)
-
 	updateCartTotal()
 }
 function addItemtoCard(title, price, imageSrc) {
@@ -75,10 +91,12 @@ function addItemtoCard(title, price, imageSrc) {
 	cartRow.classList.add('basket__box')
 	const cartItems = document.getElementsByClassName('basket')[0]
 	const cartItemNames = cartItems.getElementsByClassName('basket__box-name')
+
 	for (let i = 0; i < cartItemNames.length; i++) {
 		if (cartItemNames[i].innerText === title) {
 			alert('alredy')
 			return
+			
 		}
 	}
 
@@ -97,6 +115,7 @@ function addItemtoCard(title, price, imageSrc) {
 const updateCartTotal = () => {
 	const cartItemContainer = document.getElementsByClassName('basket')[0]
 	const cartRows = cartItemContainer.getElementsByClassName('basket__box')
+	const basketIcon = document.querySelector('.basket-icon')
 	let total = 0
 	for (let i = 0; i < cartRows.length; i++) {
 		const cartRow = cartRows[i]
@@ -107,7 +126,6 @@ const updateCartTotal = () => {
 		const quantity = quantityElement.value
 		total = total + price * quantity
 	}
-
 	total = total.toFixed(2)
 	document.getElementsByClassName('basket-cost--currency')[0].innerText = total + ' zł'
 	checkEmptyShopCart(total)

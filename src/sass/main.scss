@@ -1,5 +1,6 @@
 @import '../modules/colors';
 @import '../modules/mixins';
+@import '../modules/animation';
 @import '../modules/components';
 @import '../layout/login-page';
 @import '../layout/nav';
@@ -45,14 +46,14 @@ body {
 
 	//
 
-	// display: none;
+	display: none;
 }
 .login {
 	display: none;
 
 	//
 
-	// display: flex;
+	display: flex;
 }
 
 .wrapper {

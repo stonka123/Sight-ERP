@@ -35,9 +35,7 @@ const prepareDOMEvents = () => {
 	$todoInput.addEventListener('keyup', enterCheck)
 }
 
-const addNewTask = () => {
-	console.log('ok')
-}
+const addNewTask = () => {}
 
 const enterCheck = () => {
 	console.log(event)
