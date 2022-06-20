@@ -69,6 +69,7 @@
 
 				object-fit: cover;
 			}
+			&-iconS,
 			&-icon {
 				display: block;
 				cursor: pointer;
@@ -147,5 +148,5 @@
 }
 
 .shake-lr {
-	animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) ;
+	animation: shake-lr 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }

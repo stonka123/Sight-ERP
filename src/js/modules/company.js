@@ -2,7 +2,7 @@ const openPanelBtn = document.querySelector('.social-panel__addbtn')
 const panelControl = document.querySelector('.social-controler')
 const socialContainer = document.querySelector('.social-container')
 const error = document.querySelector('.social-controler-error')
-const likeIcon = document.querySelectorAll('.social-container__card-icon')
+const likeIconS = document.querySelectorAll('.social-container__card-iconS')
 
 // panel
 const closePanelBtn = document.querySelector('.social-controler-btns__close')
@@ -32,6 +32,14 @@ const addPost = () => {
     <div class="social-container__card-icon"><i class="fa-regular fa-heart"></i></div>
     <p class="social-container__card-title">${textArea.value}</p>`
 		socialContainer.append(newPost)
+		const likeIcon = document.querySelectorAll('.social-container__card-icon')
+		likeIcon.forEach(el => {
+			el.addEventListener('click', () => {
+				localStorage.setItem('like', 'true')
+				el.classList.toggle('color-red')
+				el.classList.toggle('shake-lr')
+			})
+		})
 		closePanelControl()
 	} else {
 		error.style.visibility = 'visible'
@@ -41,7 +49,7 @@ const addPost = () => {
 openPanelBtn.addEventListener('click', showPanelControl)
 closePanelBtn.addEventListener('click', closePanelControl)
 addPanelBtn.addEventListener('click', addPost)
-likeIcon.forEach(el => {
+likeIconS.forEach(el => {
 	el.addEventListener('click', () => {
 		localStorage.setItem('like', 'true')
 		el.classList.toggle('color-red')

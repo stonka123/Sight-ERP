@@ -5,6 +5,7 @@
 @import '../layout/login-page';
 @import '../layout/nav';
 @import '../layout/panel-top';
+@import '../layout/settings';
 @import '../layout/main-content';
 @import '../layout/start';
 @import '../layout/orders';
@@ -46,14 +47,14 @@ body {
 
 	//
 
-	display: none;
+	// display: none;
 }
 .login {
 	display: none;
 
 	//
 
-	display: flex;
+	// display: flex;
 }
 
 .wrapper {

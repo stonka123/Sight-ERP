@@ -767,6 +767,95 @@
   }
 }
 
+.settings {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 1em;
+  background-color: #f5f5f5;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.settings-panel {
+  margin: 1em;
+  font-size: 1.4rem;
+}
+
+.settings-panel__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin: 1em 0;
+  text-transform: uppercase;
+}
+
+.settings-panel__frame {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  border-color: #7e49f8;
+  border-width: 1px;
+}
+
+.settings-panel__frame-title {
+  color: #414141;
+  text-align: center;
+  padding: 0 0.5em;
+}
+
+.settings-panel__frame-main {
+  padding: 0.4em 0.1em;
+  margin: 0.5em 0.1em;
+  margin-left: 0;
+}
+
+.settings__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.settings__btn-close {
+  padding: 0.5em 1em;
+  border: none;
+  background-color: #cfcfcf;
+  color: #222222;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.settings__btn-close:hover {
+  background-color: #949494;
+  color: #000;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
 .main-content {
   width: 100vw;
 }
@@ -1701,7 +1790,7 @@
      object-fit: cover;
 }
 
-.social-container__card-icon {
+.social-container__card-iconS, .social-container__card-icon {
   display: block;
   cursor: pointer;
   margin: 0.5em;
@@ -1852,14 +1941,10 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  display: none;
 }
 
 .login {
   display: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .wrapper {
