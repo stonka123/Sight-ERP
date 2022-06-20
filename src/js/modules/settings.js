@@ -19,5 +19,16 @@ const activeIconColor = () => {
 	}
 }
 
+document.querySelector('.dashboard').addEventListener('click', e => {
+	const target = e.target
+	const iconTarget = e.target.closest('.settings')
+	const setBtn = e.target.closest('.panel-box__item-settings')
+
+	if (!iconTarget && !setBtn) {
+		closeSettingsPanel()
+		console.log('close')
+	}
+})
+
 settingsBtn.addEventListener('click', showSettingPanel)
 BtnClosePanel.addEventListener('click', closeSettingsPanel)
