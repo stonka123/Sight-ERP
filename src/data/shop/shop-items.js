@@ -4,6 +4,7 @@ export const products = [
 		title: 'Koszulka',
 		price: '59.99',
 		img: './src/img/shirt_item1.png',
+		priceEuro: '12.99',
 	},
 	{
 		id: 1,

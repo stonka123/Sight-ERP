@@ -96,7 +96,6 @@ function addItemtoCard(title, price, imageSrc) {
 		if (cartItemNames[i].innerText === title) {
 			alert('alredy')
 			return
-			
 		}
 	}
 

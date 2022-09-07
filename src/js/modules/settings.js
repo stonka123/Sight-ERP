@@ -1,3 +1,6 @@
+// import '../logic/shop-card.js'
+import '../../data/shop/shop-items.js'
+
 const settingsBtn = document.querySelector('.panel-box__item-settings')
 const settingsPanel = document.querySelector('.settings')
 const BtnClosePanel = document.querySelector('.settings__btn-close')
@@ -26,7 +29,7 @@ document.querySelector('.dashboard').addEventListener('click', e => {
 
 	if (!iconTarget && !setBtn) {
 		closeSettingsPanel()
-		console.log('close')
+		// console.log('close')
 	}
 })
 

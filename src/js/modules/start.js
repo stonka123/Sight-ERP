@@ -7,7 +7,7 @@ export const titleWorkInfo = document.querySelector('.start-container__text')
 const sectionLogin = document.querySelector('.login')
 
 let $startBox
-let $dzien
+let $day
 let $endBtn
 let $startInput
 let $godzina
@@ -31,8 +31,22 @@ export const startWork = () => {
 export const createDayWork = () => {
 	let $now = new Date()
 	let $today = new Date()
-	let $startDate = $now.getFullYear() + '-' + ($now.getMonth() + 1) + '-' + $now.getDate()
-	let $startHour = $now.getHours() + ':' + $now.getMinutes()
+	let $startDate =
+		$now.getFullYear() +
+		'-' +
+		($now.getMonth() + 1).toString().replace(/^(\d)$/, '0$1') +
+		'-' +
+		$now
+			.getDate()
+			.toString()
+			.replace(/^(\d)$/, '0$1')
+	let $startHour =
+		$now.getHours() +
+		':' +
+		$now
+			.getMinutes()
+			.toString()
+			.replace(/^(\d)$/, '0$1')
 
 	// change title info
 	titleWorkInfo.textContent = 'Zakończ pracę'
@@ -45,9 +59,9 @@ export const createDayWork = () => {
 	$startBox = document.createElement('div')
 	$startBox.classList.add('presence')
 	// create date start
-	$dzien = document.createElement('p')
-	$dzien.classList.add('presence-day')
-	$dzien.innerText = ''
+	$day = document.createElement('p')
+	$day.classList.add('presence-day')
+	$day.innerText = ''
 
 	$startInput = document.createElement('span')
 	$startInput.setAttribute('id', 'presence-day-input')
@@ -74,8 +88,8 @@ export const createDayWork = () => {
 
 	// append
 	startPresence.appendChild($startBox)
-	$startBox.appendChild($dzien)
-	$dzien.appendChild($startInput)
+	$startBox.appendChild($day)
+	$day.appendChild($startInput)
 	$startBox.appendChild($godzina)
 	$godzina.appendChild($startHourInput)
 }
