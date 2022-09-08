@@ -3,7 +3,7 @@ import '../js/logic/shop-card.js'
 import { veryficationLogaut } from './login-page/validateLogin.js'
 import { showPanelIconMobile, showProfileName } from './modules/panel-top.js'
 import { showContent } from './modules/nav.js'
-import { startWork } from './modules/start.js'
+
 import './modules/orders.js'
 import { main } from './modules/tasks.js'
 import './modules/shop.js'

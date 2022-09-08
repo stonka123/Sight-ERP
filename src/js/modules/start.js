@@ -1,80 +1,80 @@
 const startBtn = document.querySelector('.start-container__text-button--start')
-const workPanel = document.querySelector('.start-container')
 const startContainer = document.querySelector('.start')
 const startPresence = document.querySelector('.start-presence')
 const endButton = document.querySelector('.start-container__text-button--end')
 export const titleWorkInfo = document.querySelector('.start-container__text')
-const sectionLogin = document.querySelector('.login')
 
-let $startBox
-let $day
-let $endBtn
-let $startInput
-let $godzina
-let $startHourInput
+
+
+let startBox
+
+let day
+let startInput
+let startParagraphWork
+let startHourInput
+
 let endWork
 let endHourInput
-let $now
-let $today
-let $startDate
-let $startHour
 let endHourWork
+
+
+let countDay
+let countWorkDay = 1
+
 export let active = true
 
-export const startWork = () => {
-	const day = document.getElementById('presence-day-input')
-	const hourStart = document.getElementById('presence-hour-start-input')
-	const hourEnd = document.getElementById('presence-hour-end-input')
-	createDayWork()
-}
-
 export const createDayWork = () => {
-	let $now = new Date()
-	let $today = new Date()
-	let $startDate =
-		$now.getFullYear() +
+	let now = new Date()
+
+	let startDate =
+		now.getFullYear() +
 		'-' +
-		($now.getMonth() + 1).toString().replace(/^(\d)$/, '0$1') +
+		(now.getMonth() + 1).toString().replace(/^(\d)$/, '0$1') +
 		'-' +
-		$now
+		now
 			.getDate()
 			.toString()
 			.replace(/^(\d)$/, '0$1')
-	let $startHour =
-		$now.getHours() +
+	let startHour =
+		now.getHours() +
 		':' +
-		$now
+		now
 			.getMinutes()
 			.toString()
 			.replace(/^(\d)$/, '0$1')
 
 	// change title info
-	titleWorkInfo.textContent = 'Zakończ pracę'
+	titleWorkInfo.textContent = 'Zakończ pracę!'
 
 	// create end btn
 	endButton.style.display = 'block'
 	// hidden start btn
 	startBtn.style.display = 'none'
 	// creat box start work
-	$startBox = document.createElement('div')
-	$startBox.classList.add('presence')
-	// create date start
-	$day = document.createElement('p')
-	$day.classList.add('presence-day')
-	$day.innerText = ''
 
-	$startInput = document.createElement('span')
-	$startInput.setAttribute('id', 'presence-day-input')
-	$startInput.innerText = $startDate
+	startBox = document.createElement('div')
+	startBox.classList.add('presence')
+	// create date start
+	countDay = document.createElement('p')
+	countDay.classList.add('presence-number')
+	countDay.innerText = countWorkDay++ + '.' + ' '
+
+	day = document.createElement('p')
+	day.classList.add('presence-day')
+	day.innerText = ''
+
+	startInput = document.createElement('span')
+	startInput.setAttribute('id', 'presence-day-input')
+	startInput.innerText = startDate
 
 	// create start hour
-	$godzina = document.createElement('p')
-	$godzina.classList.add('presence-hour-start')
-	$godzina.innerText = 'Start:'
+	startParagraphWork = document.createElement('p')
+	startParagraphWork.classList.add('presence-hour-start')
+	startParagraphWork.innerText = 'Start:'
 
-	$startHourInput = document.createElement('span')
-	$startHourInput.setAttribute('id', 'presence-hour-start-input')
-	$startHourInput.innerText = $startHour
+	startHourInput = document.createElement('span')
+	startHourInput.setAttribute('id', 'presence-hour-start-input')
+	startHourInput.innerText = startHour
 
 	// create end hour
 	endWork = document.createElement('p')
@@ -87,19 +87,26 @@ export const createDayWork = () => {
 	// console.log(active)
 
 	// append
-	startPresence.appendChild($startBox)
-	$startBox.appendChild($day)
-	$day.appendChild($startInput)
-	$startBox.appendChild($godzina)
-	$godzina.appendChild($startHourInput)
+	startPresence.appendChild(startBox)
+	startBox.appendChild(countDay)
+	startBox.appendChild(day)
+	day.appendChild(startInput)
+	startBox.appendChild(startParagraphWork)
+	startParagraphWork.appendChild(startHourInput)
 }
 export const finishDayWork = () => {
 	let active = false
 	// title change
-	titleWorkInfo.textContent = 'Zacznij pracę'
+	titleWorkInfo.textContent = 'Rozpocznij pracę!'
 
-	let $today = new Date()
-	let endHourWork = $today.getHours() + ':' + $today.getMinutes()
+	let today = new Date()
+	let endHourWork =
+		today.getHours() +
+		':' +
+		today
+			.getMinutes()
+			.toString()
+			.replace(/^(\d)$/, '0$1')
 	// create end hour
 	endWork = document.createElement('p')
 	endWork.classList.add('presence-hour-end')
@@ -108,32 +115,28 @@ export const finishDayWork = () => {
 	endHourInput = document.createElement('span')
 	endHourInput.setAttribute('id', 'presence-hour-end-input')
 	endHourInput.innerText = endHourWork
-	$startBox.appendChild(endWork)
+	startBox.appendChild(endWork)
 	endWork.appendChild(endHourInput)
 	endButton.style.display = 'none'
 	startBtn.style.display = 'block'
-
-	// console.log(active)
 }
-export const enterCheck = () => {
+export const enterCheck = event => {
 	if (
 		event.keyCode === 13 &&
 		endButton.style.display !== 'block' &&
-		sectionLogin.style.display === 'none' &&
 		window.getComputedStyle(startContainer).display === 'block'
 	) {
+		console.log('enter')
 		createDayWork()
 	} else if (
 		event.keyCode === 13 &&
 		endButton.style.display === 'block' &&
-		sectionLogin.style.display === 'none' &&
 		window.getComputedStyle(startContainer).display === 'block'
 	) {
 		finishDayWork()
 	}
 }
 
-startBtn.addEventListener('click', startWork)
+startBtn.addEventListener('click', createDayWork)
 document.addEventListener('keyup', enterCheck)
-
 endButton.addEventListener('click', finishDayWork)

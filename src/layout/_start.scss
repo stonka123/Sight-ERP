@@ -16,20 +16,25 @@
 
 		&__text {
 			margin-top: 1em;
-			font-size: 2rem;
+			font-size: 1.7rem;
 			text-align: center;
+			color: $dark-gray;
 			&-button--start,
 			&-button--end {
-				background-color: $start-header;
-				cursor: pointer;
-				border: none;
+				margin-top: 1em;
 				padding: 0.7em 1.5em;
+				width: 60%;
+				max-width: 300px;
+				cursor: pointer;
+				background-color: $start-header;
+				border: none;
 				box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 				color: $dark-gray;
-				margin-top: 1em;
 				transition: background-color 0.4s, color 0.4s;
+				border-radius: 8px;
+
 				&:hover {
-					background-color: orange;
+					background-color: $-ligh-logo-color;
 					color: $light-white;
 				}
 			}
@@ -55,21 +60,24 @@
 	align-items: center;
 	justify-content: flex-start;
 	width: 100%;
-	height: 100%;
+	// height: 100%;
 	text-align: center;
 	padding: 0.7em;
 	font-size: 1rem;
 
 	background: rgb(241, 241, 241);
 	&:nth-child(even) {
-		background: rgb(216, 216, 216);
+		background: rgb(236, 236, 236);
+	}
+	&-number {
+		width: 2em;
 	}
 
 	&-day,
 	&-hour-start,
 	&-hour-end {
-		margin-right: 1em;
-		padding: 0.7em 0.4em;
+		margin-right: 0.5em;
+		padding: 0.7em 0.3em;
 		border-radius: 2px;
 	}
 	&-day {
