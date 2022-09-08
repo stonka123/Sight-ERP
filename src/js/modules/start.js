@@ -4,8 +4,6 @@ const startPresence = document.querySelector('.start-presence')
 const endButton = document.querySelector('.start-container__text-button--end')
 export const titleWorkInfo = document.querySelector('.start-container__text')
 
-
-
 let startBox
 
 let day
@@ -17,15 +15,14 @@ let endWork
 let endHourInput
 let endHourWork
 
-
 let countDay
 let countWorkDay = 1
 
-export let active = true
+export let active
 
 export const createDayWork = () => {
+	active = true
 	let now = new Date()
-
 	let startDate =
 		now.getFullYear() +
 		'-' +
@@ -95,7 +92,7 @@ export const createDayWork = () => {
 	startParagraphWork.appendChild(startHourInput)
 }
 export const finishDayWork = () => {
-	let active = false
+	active = false
 	// title change
 	titleWorkInfo.textContent = 'Rozpocznij pracę!'
 
@@ -126,7 +123,6 @@ export const enterCheck = event => {
 		endButton.style.display !== 'block' &&
 		window.getComputedStyle(startContainer).display === 'block'
 	) {
-		console.log('enter')
 		createDayWork()
 	} else if (
 		event.keyCode === 13 &&

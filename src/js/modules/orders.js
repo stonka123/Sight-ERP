@@ -15,8 +15,9 @@ const orderArea = document.querySelector('.orders-container')
 
 let orderID = 1
 let selectedValue
+
 const showPanelOrders = () => {
-	if (titleWorkInfo.textContent === 'Zakończ pracę') {
+	if (active) {
 		panelOrders.style.display = 'flex'
 		errorPanel.style.visibility = 'hidden'
 	} else {
