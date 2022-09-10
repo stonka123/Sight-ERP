@@ -1407,14 +1407,10 @@
 
 .start {
   display: block;
-  display: none;
 }
 
 .orders {
   display: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .tasks {
