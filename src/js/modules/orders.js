@@ -55,16 +55,18 @@ const addNewOrder = () => {
 }
 
 const createNewOrder = () => {
+	const yearOrder = new Date().getFullYear().toString().slice(-2)
 	const newOrder = document.createElement('div')
 	newOrder.classList.add('orders-container__area-new')
 	newOrder.setAttribute('id', orderID)
-
 	newOrder.innerHTML = `
 							<div class="container-orders--between">
                                 <p class="orders-container__area-new-number">${orderID}.</p>
                                 <div class="orders-container__area-new-left">
                                     <label for="" class="orders-container__area-new-left-label">Numer zlecenia:</label>
-                                    <div class="orders-container__area-new-left-orders">22R/${orderInput.value}</div>
+                                    <div class="orders-container__area-new-left-orders">${yearOrder}R/${
+		orderInput.value
+	}</div>
                                 </div>
                                 <div class="orders-container__area-new-right"><label for=""
                                         class="orders-container__area-new-right-label">Stanowisko: </label>
@@ -73,28 +75,32 @@ const createNewOrder = () => {
 																		}</div>
                                 </div>
 								</div>
-								<button class="orders-container__area-new-finish"><i
+								<p class="orders-container__area-new-text">Zakończone <i
+                                        class="fa-solid fa-check"></i>
+                                </p>
+							<button class="orders-container__area-new-finish"><i
 					class="fa-solid fa-flag"></i><span>Zakończ</span></button>
-					</div>
+					 </div>
 					
                             `
 
 	orderArea.append(newOrder)
 	orderID++
-	checkColor(newOrder)
+	completeOrder()
 }
-const selectValue = () => {
-	selectedValue = category.options[category.selectedIndex].text
+const completeOrder = () => {
+	const finishOrderBtn = document.querySelectorAll('.orders-container__area-new-finish')
+	finishOrderBtn.forEach(el => {
+		el.addEventListener('click', () => {
+			el.classList.add('button-hide')
+			el.parentElement.classList.add('finish-order')
+			el.previousElementSibling.classList.add('finish-show')
+		})
+	})
 }
 
-const checkColor = order => {
-	if (selectedValue === 'Tokarka numeryczna XC 75') {
-		order.style.backgroundColor = 'rgb(255, 227, 175)'
-	} else if (selectedValue === 'Frezarka konwencjonalna DMU 60T') {
-		order.style.backgroundColor = 'rgb(255, 220, 154)'
-	} else if (selectedValue === 'Piła taśmowa 200mm') {
-		order.style.backgroundColor = 'rgb(255, 234, 196)'
-	}
+const selectValue = () => {
+	selectedValue = category.options[category.selectedIndex].text
 }
 
 startOrdersBtn.addEventListener('click', showPanelOrders)

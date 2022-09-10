@@ -67,7 +67,7 @@ export const createDayWork = () => {
 	// create start hour
 	startParagraphWork = document.createElement('p')
 	startParagraphWork.classList.add('presence-hour-start')
-	startParagraphWork.innerText = 'Start:'
+	startParagraphWork.innerText = 'Start: '
 
 	startHourInput = document.createElement('span')
 	startHourInput.setAttribute('id', 'presence-hour-start-input')
@@ -107,7 +107,7 @@ export const finishDayWork = () => {
 	// create end hour
 	endWork = document.createElement('p')
 	endWork.classList.add('presence-hour-end')
-	endWork.innerText = 'Koniec:'
+	endWork.innerText = 'Koniec: '
 
 	endHourInput = document.createElement('span')
 	endHourInput.setAttribute('id', 'presence-hour-end-input')
