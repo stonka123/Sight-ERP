@@ -1,10 +1,13 @@
-// OTHER
+@import '../modules/colors';
+@import '../modules/mixins';
+
 .tasks {
 	align-items: center;
 	justify-content: flex-start;
 	flex-direction: column;
 	height: 100%;
 	width: 90%;
+
 	&__header {
 		background-color: $tasks-header;
 	}
@@ -14,64 +17,62 @@
 		width: 100%;
 		font-size: 1rem;
 		&__top {
-			padding: 10px;
 			width: 100%;
 			background-color: $tasks-header;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 
 			&-title {
 				font-size: 1.4rem;
-				margin-bottom: 20px;
+				padding: 0.5em 0.2em;
 				color: $dark-text;
 				text-transform: uppercase;
 			}
 			&-input {
-				font-size: 1rem;
-				width: 50%;
-				padding: 5px 10px;
-				margin-right: 20px;
+				font-size: 1.2rem;
+				padding: 0.5em 0.2em;
 				border: none;
-				border-radius: 5px;
+				box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 				color: $dark-gray;
 				background-color: $light-white;
+				width: 80%;
+				max-width: 300px;
+				&:focus {
+					outline: none;
+				}
 			}
 			&-btn {
-				font-size: 1rem;
-				padding: 5px 10px;
-				border: none;
-				border-radius: 5px;
-				color: $dark-text;
-				background-color: $light-white;
-				text-transform: uppercase;
-				cursor: pointer;
-				transition: background-color 0.3s, color 0.3s;
+				@include btnMixin;
+				transition: background-color 0.4s;
+				&:hover {
+					background-color: $-light-logo-color;
+				}
+			}
+			&-info {
+				display: block;
+				margin-top: 1em;
+				visibility: hidden;
+				padding: 0.5em 0.2em;
 			}
 		}
 		&__bottom {
-			padding: 1em;
+			display: flex;
+			justify-content: flex-start;
 			width: 100%;
+			flex-direction: row;
+			flex-wrap: wrap;
+			padding: 0.5em;
+
 			&-title {
 				text-transform: uppercase;
 				margin-bottom: 1em;
 			}
-
-			ul {
-				margin-top: 1em;
-			}
-			li {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				padding: 0.5em 1em;
-
-				margin: 0.5em;
-				list-style: none;
-				background-color: $light-white;
-				font-size: 1.2rem;
-			}
 			&-tools {
 				display: inline-block;
 				button {
-					padding: 0.2em 0.5em;
+					padding: 0.3em;
 					border: none;
 					background-color: transparent;
 					cursor: pointer;
@@ -82,27 +83,52 @@
 		}
 	}
 }
+
+.task {
+	display: flex;
+	flex-direction: column;
+	margin: 0.5em;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	width: 45%;
+	max-width: 300px;
+	position: relative;
+	&__text {
+		display: flex;
+		overflow: auto;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		margin: 0.5em;
+		padding: 1em 0.5em;
+		min-height: 50px;
+		height: 70%;
+		&-tools {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+			width: 100%;
+			background-color: $light-gray;
+			height: 30%;
+			&-complete,
+			&-edit,
+			&-delete {
+				font-size: 1.3rem;
+				height: 100%;
+				width: 33%;
+				padding: 0.5em;
+				border: none;
+				background-color: transparent;
+				cursor: pointer;
+				transition: background-color 0.3s;
+				&:hover {
+					background-color: $tasks-header;
+				}
+			}
+		}
+	}
+}
+
 // OTHER
-
-.complete {
-	color: var(--light-blue);
-}
-
-.edit {
-	font-weight: bold;
-	color: rgb(15, 179, 69);
-}
-
-.delete {
-	color: tomato;
-}
-
-.completed {
-	font-size: 12px;
-	font-style: italic;
-	color: var(--light-dark);
-	text-decoration: line-through;
-}
 
 .popup {
 	display: none;
@@ -116,54 +142,98 @@
 	width: 80%;
 	max-width: 500px;
 	color: $light-white;
-	background-color: royalblue;
+	background-color: $dark-gray;
 	border-radius: 5px;
+	&-title {
+		padding: 0.5em;
+	}
+	&-info {
+		margin-bottom: 0.5em;
+		color: $light-white;
+	}
+	&-body {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 1em;
+	}
+	&-input {
+		width: 100%;
+		padding: 0.5em 0.2em;
+		border: none;
+		border-radius: 5px;
+		color: $dark-gray;
+		background-color: $light-white;
+	}
+	&-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30%;
+		margin: 2em 1em;
+		padding: 1em 3em;
+		font-size: 1rem;
+		border: none;
+		border-radius: 5px;
+		color: $dark-gray;
+		background-color: $light-white;
+
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: background-color 0.3s, color 0.3s;
+		&:hover {
+			color: #fff;
+			background-color: $-light-logo-color;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
 }
 
-.popup h3 {
-	padding: 20px;
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+.visible {
+	visibility: visible;
+}
+.completed {
+	background-color: $start-header;
+	font-style: italic;
+	text-decoration: line-through;
+	&-tools {
+		visibility: hidden;
+		position: relative;
+		.task__text-tools-delete {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+
+			visibility: visible;
+			&:hover {
+				background-color: transparent;
+				color: red;
+			}
+		}
+	}
 }
 
-.popup-info {
-	margin-bottom: 20px;
-	color: $light-white;
-}
-
-.popup-body {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	width: 100%;
-	padding: 10px;
-}
-
-.popup-input {
-	width: 100%;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	color: $dark-gray;
-	background-color: $light-white;
-}
-
-.popup-btn {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 20%;
-	margin: 1em;
-	padding: 1em 3em;
-	font-size: 1rem;
-	border: none;
-	border-radius: 5px;
-	color: $dark-gray;
-	background-color: $light-white;
-	text-transform: uppercase;
-	cursor: pointer;
-	transition: background-color 0.3s, color 0.3s;
-}
-
-.popup-btn:hover {
-	color: #fff;
-	background-color: $logo-color;
+@media (min-width: 900px) {
+	.tasks-container__top-title {
+		font-size: 2rem;
+	}
+	.task__text {
+		font-size: 1.8rem;
+	}
+	.tasks-container__top-input {
+		font-size: 1.7rem;
+	}
+	.tasks-container__top-info {
+		font-size: 1.5rem;
+	}
 }

@@ -24,16 +24,12 @@
 			visibility: hidden;
 		}
 		&__start {
-			cursor: pointer;
+			@include btnMixin;
 			background-color: $orders-header;
-			border: none;
-			padding: 0.7em 1.5em;
-			box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 			color: $dark-gray;
-			margin-top: 1em;
 			transition: background-color 0.4s, color 0.4s;
 			&:hover {
-				background-color: orange;
+				background-color: $-light-logo-color;
 				color: $light-white;
 			}
 		}

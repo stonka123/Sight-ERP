@@ -5,7 +5,7 @@ import { showPanelIconMobile, showProfileName } from './modules/panel-top.js'
 import { showContent } from './modules/nav.js'
 
 import './modules/orders.js'
-import { main } from './modules/tasks.js'
+import './modules/tasks.js'
 import './modules/shop.js'
 import './modules/header-logic.js'
 import { renderProduct } from '../js/renders/render-shop.js'

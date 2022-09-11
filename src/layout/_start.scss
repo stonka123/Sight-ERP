@@ -13,27 +13,20 @@
 	}
 	&-container {
 		@include containerSection;
+		margin-top: 0.8em;
 
 		&__text {
 			margin-top: 1em;
-			font-size: 1.7rem;
 			text-align: center;
 			color: $dark-gray;
 			&-button--start,
 			&-button--end {
-				margin-top: 1em;
-				padding: 0.7em 1.5em;
-				width: 60%;
-				max-width: 300px;
-				cursor: pointer;
 				background-color: $start-header;
-				border: none;
-				box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 				color: $dark-gray;
 				transition: background-color 0.4s, color 0.4s;
-
+				@include btnMixin;
 				&:hover {
-					background-color: $-ligh-logo-color;
+					background-color: $-light-logo-color;
 					color: $light-white;
 				}
 			}
