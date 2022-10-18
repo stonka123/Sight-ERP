@@ -50,9 +50,11 @@
 				width: 100%;
 				background-color: rgb(255, 243, 220);
 				margin-top: 0.5em;
+
 				&:nth-child(even) {
 					background-color: rgb(250, 232, 198);
 				}
+
 				&-number {
 					display: flex;
 					align-items: center;
@@ -104,7 +106,7 @@
 					font-size: 1rem;
 					display: flex;
 					flex-direction: column;
-					align-content: flex-end;
+					align-content: center;
 					border: none;
 					background-color: transparent;
 					padding: 0.5em 0.3em;

@@ -364,8 +364,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
+  -ms-flex-line-pack: center;
+      align-content: center;
   border: none;
   background-color: transparent;
   padding: 0.5em 0.3em;
@@ -942,7 +942,6 @@
 
 .nav-items__item--icon--logout {
   color: #fa4747;
-  margin-right: 0.5em;
 }
 
 .nav--logout {
@@ -953,6 +952,10 @@
   bottom: 10vh;
   text-decoration: none;
   color: #fa4747;
+}
+
+.nav--logout span {
+  margin-left: 0.5em;
 }
 
 .icon-spy {

@@ -67,7 +67,6 @@
 				}
 				&--logout {
 					color: $attention;
-					margin-right: 0.5em;
 				}
 			}
 			text-decoration: none;
@@ -81,6 +80,9 @@
 		bottom: 10vh;
 		text-decoration: none;
 		color: $attention;
+		span {
+			margin-left: 0.5em;
+		}
 	}
 }
 // other
